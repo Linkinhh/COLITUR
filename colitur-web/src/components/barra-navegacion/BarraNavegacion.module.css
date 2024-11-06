@@ -1,0 +1,13 @@
+@import "../../index.css";
+
+.container
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /*
+    border-style: solid;
+    border-width: 10px;
+    border-color: red;
+    */
+}

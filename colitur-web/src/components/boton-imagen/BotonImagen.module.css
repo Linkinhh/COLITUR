@@ -1,0 +1,14 @@
+.boton
+{
+    padding: 0;
+    background-color: white;
+    border: none;
+    &:hover{
+        cursor:pointer;
+    }
+}
+
+.imagen
+{
+    width: 90px;
+}
