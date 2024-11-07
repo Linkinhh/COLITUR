@@ -1,9 +1,13 @@
-import { BarraNavegacion } from "../../components";
+import { BarraNavegacion, Footer } from "../../components";
 
 function PaginaInicio()
 {
     return(
-        <BarraNavegacion></BarraNavegacion>
+        <>
+            <BarraNavegacion></BarraNavegacion>
+            <Footer></Footer>
+        </>
+        
     )
 }
 
