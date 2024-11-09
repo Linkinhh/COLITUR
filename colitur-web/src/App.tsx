@@ -1,9 +1,10 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+//import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
+//import { useState } from 'react';
 import './App.css';
 import PaginaInicio from './features/pagina-inicio/PaginaInicio';
 
+/*
 function Rutas()
 {
   return(
@@ -11,6 +12,7 @@ function Rutas()
     ></Link>
   )
 }
+*/
 
 function Fuentes()
 {
@@ -23,7 +25,7 @@ function Fuentes()
 }
 
 function App() {
-  const [count, setCount] = useState(0)
+  //const [count, setCount] = useState(0)
 
   return (
     <>

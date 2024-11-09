@@ -4,3 +4,7 @@ export {default as BotonEstandarImagen} from './boton-estandar-imagen/BotonEstan
 export {default as BotonNavegacion} from './boton-navegacion/BotonNavegacion';
 export {default as Footer} from './footer/Footer';
 export {default as LogoColitur} from './logo-colitur/LogoColitur';
+export {default as TituloLogoColitur} from './titulo-logo-colitur/TituloLogoColitur';
+export {default as FondoPaginas} from './fondo-paginas/FondoPaginas';
+export {default as ContenedorConTitulo} from './contenedor-con-titulo/ContenedorConTitulo';
+export {default as CuadroServicio} from './cuadro-servicio/CuadroServicio';
