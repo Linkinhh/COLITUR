@@ -13,10 +13,30 @@
 
 .contenedorServicios
 {
+    width: 95%;
+    margin-top: 54px;
+    margin-bottom: 54px;
+    gap: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contenedorNoticias
+{
+    width: 95%;
     margin-top: 54px;
     margin-bottom: 54px;
     display: flex;
-    gap: 50px;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.contenedorConvenios
+{
+    width: 95%;
+    margin-top: 54px;
+    margin-bottom: 54px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }

@@ -8,3 +8,4 @@ export {default as TituloLogoColitur} from './titulo-logo-colitur/TituloLogoColi
 export {default as FondoPaginas} from './fondo-paginas/FondoPaginas';
 export {default as ContenedorConTitulo} from './contenedor-con-titulo/ContenedorConTitulo';
 export {default as CuadroServicio} from './cuadro-servicio/CuadroServicio';
+export {default as CuadroNoticia} from './cuadro-noticia/CuadroNoticia';
