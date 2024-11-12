@@ -3,13 +3,14 @@ import styles from "../titulo-logo-colitur/TituloLogoColitur.module.css";
 
 interface Props
 {
+    imagen: string;
     titulo: string;
 }
 
-function TituloLogoColitur({titulo}: Props)
+function TituloLogoColitur({titulo, imagen}: Props)
 {
     return(
-        <section className={styles.contenedor}>
+        <section style={{"--imagen-fondo": `url(${imagen})`} as React.CSSProperties} className={styles.contenedor}>
             <LogoColitur></LogoColitur>
             <span className={styles.titulo}>{titulo}</span>
         </section>

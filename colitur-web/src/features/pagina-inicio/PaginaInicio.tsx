@@ -12,110 +12,110 @@ import convenio1 from "../../assets/Sernanp.svg";
 import convenio2 from "../../assets/PromPeru.svg";
 import convenio3 from "../../assets/MinPeru.svg";
 import convenio4 from "../../assets/Dicetur.svg";
+import fondo from "../../assets/Inicio.svg";
+//import { Link } from 'react-router-dom';
 
-const datos=
-[
-    {
-        imagen : consultarHabilitados,
-        titulo : "Consultar Habilitados",
-        descripcion : "Lorem Ipsum is simply dummy text of the printing and typesetting industry." 
-    },
-    {
-        imagen : eventosAcademicos,
-        titulo : "Eventos Académicos",
-        descripcion : "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-    },
-    {
-        imagen : realizarConvenios,
-        titulo : "Realizar Convenios",
-        descripcion : "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-    },
-    {
-        imagen : bibliotecaVirtual,
-        titulo : "Biblioteca Virtual",
-        descripcion : "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-    },
-    {
-        imagen : pagoVirtual,
-        titulo : "Medios de Pago",
-        descripcion : "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-    }
-];
+const datos =
+    [
+        {
+            imagen: consultarHabilitados,
+            titulo: "Consultar Habilitados",
+            descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+        },
+        {
+            imagen: eventosAcademicos,
+            titulo: "Eventos Académicos",
+            descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+        },
+        {
+            imagen: realizarConvenios,
+            titulo: "Realizar Convenios",
+            descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+        },
+        {
+            imagen: bibliotecaVirtual,
+            titulo: "Biblioteca Virtual",
+            descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+        },
+        {
+            imagen: pagoVirtual,
+            titulo: "Medios de Pago",
+            descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+        }
+    ];
 
-const datosNoticias=
-[
-    {
-        imagen: noticia1,
-        fecha: "16 Sep."
-    },
-    {
-        imagen: noticia2,
-        fecha: "26 Oct."
-    },
-    {
-        imagen: noticia3,
-        fecha: "29 Ago."
-    }
-]
+const datosNoticias =
+    [
+        {
+            imagen: noticia1,
+            fecha: "16 Sep."
+        },
+        {
+            imagen: noticia2,
+            fecha: "26 Oct."
+        },
+        {
+            imagen: noticia3,
+            fecha: "29 Ago."
+        }
+    ]
 
-const convenios=
-[
-    {
-        imagen: convenio1
-    },
-    {
-        imagen: convenio2
-    },
-    {
-        imagen: convenio3
-    },
-    {
-        imagen: convenio4
-    }
-]
+const convenios =
+    [
+        {
+            imagen: convenio1
+        },
+        {
+            imagen: convenio2
+        },
+        {
+            imagen: convenio3
+        },
+        {
+            imagen: convenio4
+        }
+    ]
 
-interface Props
-{
+interface Props {
     imagen: string
 }
 
-function ImagenConvenio({imagen}: Props)
-{
-    return(
+function ImagenConvenio({ imagen }: Props) {
+    return (
         <img src={imagen}></img>
     )
 }
 // Son 54px de espacio horizontal entre cosa y cosa
 
-function PaginaInicio()
-{
-    
-    return(
+function PaginaInicio() {
+
+    return (
         <>
+            
             <div className={styles.content}>
                 <BarraNavegacion></BarraNavegacion>
-                <TituloLogoColitur titulo="Creado por Ley N° 24915 y actualizado por Ley N° 31172"></TituloLogoColitur>
+                <TituloLogoColitur titulo="Creado por Ley N° 24915 y actualizado por Ley N° 31172" imagen={fondo}></TituloLogoColitur>
                 <FondoPaginas>
                     <ContenedorConTitulo titulo="Servicios">
                         <div className={styles.contenedorServicios}>
                             {datos.map((data, index) => (
-                                    <CuadroServicio
+                                <CuadroServicio
                                     key={index}
-                                    imagen = {data.imagen}
-                                    titulo = {data.titulo}
-                                    descripcion = {data.descripcion}
-                                    ></CuadroServicio>
+                                    imagen={data.imagen}
+                                    titulo={data.titulo}
+                                    descripcion={data.descripcion}
+                                ></CuadroServicio>
                             ))}
                         </div>
                     </ContenedorConTitulo>
                     <ContenedorConTitulo titulo="Últimas Noticias">
                         <div className={styles.contenedorNoticias}>
                             {datosNoticias.map((data, index) => (
-                                    <CuadroNoticia
+                                <CuadroNoticia
                                     key={index}
-                                    imagen = {data.imagen}
-                                    fecha = {data.fecha}
-                                    ></CuadroNoticia>
+                                    imagen={data.imagen}
+                                    fecha={data.fecha}
+                                ></CuadroNoticia>
                             ))}
                         </div>
                     </ContenedorConTitulo>
@@ -123,10 +123,10 @@ function PaginaInicio()
                     <ContenedorConTitulo titulo="Convenios">
                         <div className={styles.contenedorConvenios}>
                             {convenios.map((data, index) => (
-                                        <ImagenConvenio
-                                        key={index}
-                                        imagen = {data.imagen}
-                                        ></ImagenConvenio>
+                                <ImagenConvenio
+                                    key={index}
+                                    imagen={data.imagen}
+                                ></ImagenConvenio>
                             ))}
                         </div>
 

@@ -1,0 +1,25 @@
+@import "../../App.css";
+
+.boton
+{
+    background-color: var(--lightblue-color); 
+    border-radius: 18px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.boton:hover
+{
+    background-color: var(--darkblue-color);
+    cursor: pointer;
+}
+
+.spanBoton
+{
+    color: white;
+    font-weight: bold;
+    font-size: 26px;
+}

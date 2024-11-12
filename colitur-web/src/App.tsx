@@ -1,18 +1,7 @@
-//import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-//import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 //import { useState } from 'react';
 import './App.css';
-import PaginaInicio from './features/pagina-inicio/PaginaInicio';
-
-/*
-function Rutas()
-{
-  return(
-    <Link to="/"
-    ></Link>
-  )
-}
-*/
+import {PaginaColegiatura, PaginaInicio, PaginaNormativa} from './features/index';
 
 function Fuentes()
 {
@@ -28,10 +17,14 @@ function App() {
   //const [count, setCount] = useState(0)
 
   return (
-    <>
-      <Fuentes></Fuentes> 
-      <PaginaInicio></PaginaInicio>
-    </>
+    <Router>
+      <Fuentes></Fuentes>
+      <Routes>
+        <Route path="/" element={<PaginaInicio></PaginaInicio>}></Route>
+        <Route path="/Normativa" element={<PaginaNormativa></PaginaNormativa>}></Route>
+        <Route path="/Colegiatura" element={<PaginaColegiatura></PaginaColegiatura>}></Route>
+      </Routes>
+    </Router>
   )
 }
 
