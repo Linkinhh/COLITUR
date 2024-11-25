@@ -1,0 +1,59 @@
+@import "../../App.css";
+
+.contenedorPrincipal
+{
+    width: 80%;
+    background-color: var(--white-color);
+}
+
+.titulo
+{
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    padding-left: 10px;
+}
+
+.contenedorTitulo
+{
+    display: flex;
+    flex-direction: row;
+}
+
+/*
+.contenedorContenido
+{
+    
+}
+*/
+
+.contenedorPestana,
+.contenedorPestanaActiva {
+    border: none;
+    display: flex;
+    justify-content: center;
+    padding: 15px 20px; /* Combina paddings en una sola línea */
+    border-bottom: 4px solid transparent; /* Se asegura de mantener la misma base */
+    transition: border-bottom-color 0.3s ease, background-color 0.3s ease; /* Transiciones suaves */
+}
+
+.contenedorPestana {
+    background: none;
+    color: var(--grey-color);
+    font-weight: bold; /* Destaca texto */
+    border-bottom-color: var(--grey-color); /* Borde azul para la pestaña activa */
+}
+
+.contenedorPestana:hover {
+    cursor: pointer;
+    border-bottom-color: var(--lightblue-color);
+}
+
+.contenedorPestanaActiva {
+    background-color: var(--white-color);
+    color: #000000;
+    font-weight: bold; 
+    border-bottom-color: var(--lightblue-color);
+}

@@ -1,0 +1,88 @@
+@import "../../App.css";
+
+.contenedor
+{
+    width: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin: 50px;
+    /*border: solid 10px red;*/
+}
+
+.campoTexto
+{
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5em;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    border-radius: 16px;
+    border: 0px;
+    /* Alterar por una variable definida por el desarrollador*/
+    width: 95%;
+    /* Alterar por una variable definida por el desarrollador*/
+    height: 50px;
+}
+
+.icono
+{
+    position: absolute;
+    right: 10px;
+    user-select: none;
+    width: 30px;
+}
+
+.iconoPassword
+{
+    position: absolute;
+    right: 10px;
+    user-select: none;
+    width: 35px;
+    height: 35px;
+}
+
+.ayuda
+{
+    font-family: 'Inter', sans-serif;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #333;
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+    width: 200px;
+    display: none;
+    margin-top: 5px;
+    font-size: 18px;
+    z-index: 1;
+}
+
+.icono:hover + .ayuda {
+    display: block;
+}
+
+.ayuda::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: 20px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #333;
+}
+
+.botonPassword
+{
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

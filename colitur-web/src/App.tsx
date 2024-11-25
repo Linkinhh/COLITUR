@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 //import { useState } from 'react';
 import './App.css';
-import {PaginaColegiatura, PaginaInicio, PaginaNormativa} from './features/index';
+import {PaginaColegiatura, PaginaInicio, PaginaNormativa, IniciarSesion, Administrador} from './features/index';
 
 function Fuentes()
 {
@@ -16,6 +16,7 @@ function Fuentes()
 function App() {
   //const [count, setCount] = useState(0)
 
+  // añadir rutas de servicios
   return (
     <Router>
       <Fuentes></Fuentes>
@@ -23,6 +24,9 @@ function App() {
         <Route path="/" element={<PaginaInicio></PaginaInicio>}></Route>
         <Route path="/Normativa" element={<PaginaNormativa></PaginaNormativa>}></Route>
         <Route path="/Colegiatura" element={<PaginaColegiatura></PaginaColegiatura>}></Route>
+        <Route path='/IniciarSesion' element={<IniciarSesion></IniciarSesion>}></Route>
+        <Route path='/IniciarSesion/Administrador' element={<Administrador></Administrador>}></Route>
+        <Route path="*" element={<div>Página no encontrada</div>} />
       </Routes>
     </Router>
   )

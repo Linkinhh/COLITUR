@@ -20,27 +20,37 @@ const datos =
         {
             imagen: consultarHabilitados,
             titulo: "Consultar Habilitados",
-            descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            // añadir ruta
+            ruta: "/"
         },
         {
             imagen: eventosAcademicos,
             titulo: "Eventos Académicos",
-            descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            // añadir ruta
+            ruta: "/"
         },
         {
             imagen: realizarConvenios,
             titulo: "Realizar Convenios",
-            descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            // añadir ruta
+            ruta: "/"
         },
         {
             imagen: bibliotecaVirtual,
             titulo: "Biblioteca Virtual",
-            descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            // añadir ruta
+            ruta: "/"
         },
         {
             imagen: pagoVirtual,
             titulo: "Medios de Pago",
-            descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            // añadir ruta
+            ruta: "/"
         }
     ];
 
@@ -104,6 +114,7 @@ function PaginaInicio() {
                                     imagen={data.imagen}
                                     titulo={data.titulo}
                                     descripcion={data.descripcion}
+                                    ruta={data.ruta}
                                 ></CuadroServicio>
                             ))}
                         </div>

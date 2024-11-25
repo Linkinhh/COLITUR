@@ -24,7 +24,9 @@ function BarraNavegacion()
             <Link to="/Normativa" style={{textDecoration: 'none'}}>
                 <BotonNavegacion>Normativa</BotonNavegacion>
             </Link>
-            <BotonEstandarImagen>Iniciar Sesión</BotonEstandarImagen>
+            <Link to="/IniciarSesion" style={{textDecoration: 'none'}}>
+                <BotonEstandarImagen>Iniciar Sesión</BotonEstandarImagen>
+            </Link>
         </section>
         </>
     )

@@ -4,7 +4,7 @@ import styles from "../titulo-logo-colitur/TituloLogoColitur.module.css";
 interface Props
 {
     imagen: string;
-    titulo: string;
+    titulo: string; 
 }
 
 function TituloLogoColitur({titulo, imagen}: Props)

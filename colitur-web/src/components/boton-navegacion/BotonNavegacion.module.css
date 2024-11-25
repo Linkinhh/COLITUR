@@ -11,12 +11,11 @@
     justify-content: center;
     align-items: center;
     border: none;
+    border-bottom: 4px solid transparent;
 }
 
 .botonNavegacion:hover
 {
-    border-bottom: 4px;
-    border-bottom-style: solid;
     border-bottom-color: var(--lightblue-color);
     cursor: pointer;
 }
