@@ -10,3 +10,33 @@
     display: flex;
     flex-direction: column;
 }
+
+a {
+    color: var(--yellow-color-letter);
+}
+
+.contenedor {
+    width: 90%;
+    background-color: white;
+    display: flex;
+    border: none 0px;
+    flex-direction: column;
+    padding: 25px;
+    margin-top: 27px;
+    margin-bottom: 27px;
+}
+
+h1 {
+    color: var(--lightblue-color);
+    font-size: 32px;
+    font-family: 'Inter', sans-serif;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+li{
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    text-align: justify;
+    margin-bottom: 10px;
+}
