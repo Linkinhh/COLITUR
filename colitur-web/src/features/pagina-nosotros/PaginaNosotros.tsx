@@ -1,7 +1,7 @@
 import styles from './PaginaNosotros.module.css';
 import { BarraNavegacion, FondoPaginas, Footer, TituloLogoColitur, ContenedorConTitulo, FotoLicenciado} from '../../components';
 import portada from '../../assets/Nosotros.jpg';
-import licenciado from '../../assets/Licenciado.png'
+import licenciado from '../../assets/datos_personales_administrador.jpg'
 
 const licenciados = 
 [
