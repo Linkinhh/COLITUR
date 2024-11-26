@@ -12,3 +12,4 @@ export {default as CuadroNoticia} from './cuadro-noticia/CuadroNoticia';
 export {default as BotonEstandar} from './boton-estandar/BotonEstandar';
 export {default as InputTexto} from './input-texto/InputTexto';
 export {default as TabWidget} from './tab-widget/TabWidget';
+export {default as FotoLicenciado} from './foto-licenciado/FotoLicenciado';

@@ -16,7 +16,10 @@ function BarraNavegacion()
             <Link to="/" style={{textDecoration: 'none'}}>
                 <BotonImagen></BotonImagen>
             </Link>
+
+            <Link to="/Nosotros" style={{textDecoration: 'none'}}>
             <BotonNavegacion>Nosotros</BotonNavegacion>
+            </Link>
             <BotonNavegacion>Servicios</BotonNavegacion>
             <Link to="/Colegiatura" style={{textDecoration: 'none'}}>
                 <BotonNavegacion>Colegiatura</BotonNavegacion>

@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 //import { useState } from 'react';
 import './App.css';
-import {PaginaColegiatura, PaginaInicio, PaginaNormativa, IniciarSesion, Administrador} from './features/index';
+import {PaginaColegiatura, PaginaInicio, PaginaNormativa, IniciarSesion, Administrador, PaginaNosotros} from './features/index';
 
 function Fuentes()
 {
@@ -22,6 +22,7 @@ function App() {
       <Fuentes></Fuentes>
       <Routes>
         <Route path="/" element={<PaginaInicio></PaginaInicio>}></Route>
+        <Route path="/Nosotros" element={<PaginaNosotros></PaginaNosotros>}></Route>
         <Route path="/Normativa" element={<PaginaNormativa></PaginaNormativa>}></Route>
         <Route path="/Colegiatura" element={<PaginaColegiatura></PaginaColegiatura>}></Route>
         <Route path='/IniciarSesion' element={<IniciarSesion></IniciarSesion>}></Route>
