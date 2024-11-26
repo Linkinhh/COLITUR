@@ -27,7 +27,7 @@ const TabWidget: React.FC<TabWidgetProps> = ({ tabs, isVisible }) => {
             <div className={styles.contenedorTitulo}>
                 {tabs.map((tab) => (
                     <button
-                    key={tab.id} 
+                    key={tab.id}
                     onClick={()=>setActiveTab(tab.id)}
                     className={`${styles.contenedorPestana} ${activeTab === tab.id ? styles.contenedorPestanaActiva : ''}`}>
                         {tab.icono}
