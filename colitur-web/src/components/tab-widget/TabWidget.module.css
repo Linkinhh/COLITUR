@@ -2,7 +2,7 @@
 
 .contenedorPrincipal
 {
-    width: 80%;
+    width: 100%;
     background-color: var(--white-color);
 }
 
@@ -22,12 +22,13 @@
     flex-direction: row;
 }
 
-/*
+
 .contenedorContenido
 {
-    
+    display: flex;
+    justify-content: center;
 }
-*/
+
 
 .contenedorPestana,
 .contenedorPestanaActiva {

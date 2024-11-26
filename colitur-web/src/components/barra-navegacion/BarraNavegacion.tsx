@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import BotonNavegacion from '../boton-navegacion/BotonNavegacion';
 import BotonEstandarImagen from '../boton-estandar-imagen/BotonEstandarImagen';
 import BotonImagen from '../boton-imagen/BotonImagen';
+import {CircleUserRound} from 'lucide-react';
 
 function BarraNavegacion()
 {
@@ -28,7 +29,7 @@ function BarraNavegacion()
                 <BotonNavegacion>Normativa</BotonNavegacion>
             </Link>
             <Link to="/IniciarSesion" style={{textDecoration: 'none'}}>
-                <BotonEstandarImagen>Iniciar Sesión</BotonEstandarImagen>
+                <BotonEstandarImagen nombre='Iniciar Sesion' conSombra = {true} children={<CircleUserRound size={48} strokeWidth={0.5}/>}></BotonEstandarImagen>
             </Link>
         </section>
         </>

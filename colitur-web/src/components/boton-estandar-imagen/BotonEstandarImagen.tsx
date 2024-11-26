@@ -1,21 +1,25 @@
 import { ReactNode } from 'react';
 import styles from '../boton-estandar-imagen/BotonEstandarImagen.module.css';
-import imagen from '../../assets/Login Blanco.svg'
 
 interface Props{
-    children?:ReactNode
+    nombre: string,
+    children?:ReactNode,
+    conSombra: boolean
 }
 
-function BotonEstandarImagen({children}: Props)
+function BotonEstandarImagen({nombre, children, conSombra}: Props)
 {
+    const sombra = conSombra ? {boxShadow: '0px 6px 8px rgba(0, 0, 0, 0.6)'} : {};
+
     return(
         <button 
-            className={styles.botonIniciarSesion}>
+            className={styles.botonIniciarSesion} style={sombra}>
             <span className={styles.spanIniciarSesion}>
-                {children}
+                {nombre}
             </span>
-            <img src={imagen} className={styles.imagenIniciarSesion}>
-            </img>
+            <div className={styles.componenteHijo}>
+                {children}
+            </div>
         </button>
     )
 }
