@@ -14,23 +14,30 @@ function BarraNavegacion()
     return (
         <>
         <section className={styles.container}>
-            <Link to="/" style={{textDecoration: 'none'}}>
-                <BotonImagen></BotonImagen>
-            </Link>
+            
+            <div className={styles.fijo}>
+                <Link to="/" style={{textDecoration: 'none'}}>
+                    <BotonImagen></BotonImagen>
+                </Link>
 
-            <Link to="/Nosotros" style={{textDecoration: 'none'}}>
-            <BotonNavegacion>Nosotros</BotonNavegacion>
-            </Link>
-            <BotonNavegacion>Servicios</BotonNavegacion>
-            <Link to="/Colegiatura" style={{textDecoration: 'none'}}>
-                <BotonNavegacion>Colegiatura</BotonNavegacion>
-            </Link>
-            <Link to="/Normativa" style={{textDecoration: 'none'}}>
-                <BotonNavegacion>Normativa</BotonNavegacion>
-            </Link>
-            <Link to="/IniciarSesion" style={{textDecoration: 'none'}}>
-                <BotonEstandarImagen nombre='Iniciar Sesion' conSombra = {true} children={<CircleUserRound size={48} strokeWidth={0.5}/>}></BotonEstandarImagen>
-            </Link>
+                <Link to="/Nosotros" style={{textDecoration: 'none'}}>
+                <BotonNavegacion>Nosotros</BotonNavegacion>
+                </Link>
+                <BotonNavegacion>Servicios</BotonNavegacion>
+                <Link to="/Colegiatura" style={{textDecoration: 'none'}}>
+                    <BotonNavegacion>Colegiatura</BotonNavegacion>
+                </Link>
+                <Link to="/Normativa" style={{textDecoration: 'none'}}>
+                    <BotonNavegacion>Normativa</BotonNavegacion>
+                </Link>
+                <Link to="/IniciarSesion" style={{textDecoration: 'none'}}>
+                    <BotonEstandarImagen nombre='Iniciar Sesion' conSombra = {true} children={<CircleUserRound size={48} strokeWidth={0.5}/>}></BotonEstandarImagen>
+                </Link>
+            </div>
+            <div className={styles.fondoBarra}>
+                /** Es un contendor que indica el tamano de la barra de navegacion */
+            </div>
+
         </section>
         </>
     )

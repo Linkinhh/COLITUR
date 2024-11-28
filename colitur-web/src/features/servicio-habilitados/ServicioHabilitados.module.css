@@ -1,0 +1,48 @@
+@import "../../App.css";
+
+.content {
+    width: 100vw;
+    margin-left: -9px;
+    margin-bottom: -9px;
+    margin-top: -9px;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.buscador {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 95%;
+}
+
+.label {
+    width: 50%;
+}
+
+p{
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.boton{
+    width: 10%;
+    height: 50px;
+    margin: 20px;
+}
+
+.textoBoton{
+    font-size: 18px;
+}
+
+.contenedorLicenciados {
+    width: 90%;
+    margin-top: 25px;
+    gap: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
