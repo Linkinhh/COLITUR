@@ -4,4 +4,4 @@ export { default as PaginaColegiatura} from "./pagina-colegiatura/PaginaColegiat
 export { default as IniciarSesion} from "./iniciar-sesion/IniciarSesion";
 export { default as Administrador} from "./administrador/Administrador";
 export {default as PaginaNosotros} from "./pagina-nosotros/PaginaNosotros";
-export {default as ServicioHabilitados} from "./servicio-habilitados/servicioHabilitados";
+export {default as ServicioHabilitados} from "./servicio-habilitados/ServicioHabilitados";
