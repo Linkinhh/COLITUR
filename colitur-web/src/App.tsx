@@ -1,6 +1,7 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 //import { useState } from 'react';
 import './App.css';
+import { useEffect } from 'react';
 import {PaginaColegiatura, PaginaInicio, PaginaNormativa, IniciarSesion, Administrador} from './features/index';
 
 function Fuentes()
@@ -13,13 +14,25 @@ function Fuentes()
   )
 }
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   //const [count, setCount] = useState(0)
 
   // añadir rutas de servicios
   return (
+    
     <Router>
       <Fuentes></Fuentes>
+      <ScrollToTop></ScrollToTop>
       <Routes>
         <Route path="/" element={<PaginaInicio></PaginaInicio>}></Route>
         <Route path="/Normativa" element={<PaginaNormativa></PaginaNormativa>}></Route>

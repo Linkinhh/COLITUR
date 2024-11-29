@@ -30,7 +30,7 @@ const BarraLateral: React.FC<BarraLateralProps> = ({opciones}) => {
                     {opciones.map((opcion)=> (
                         <button
                         key={opcion.id}
-                        onClick={() => setActiveSection (activeSection === opcion.id ? null : opcion.id)}
+                        onClick={() => setActiveSection (activeSection === opcion.id ? opcion.id : opcion.id)}
                         className={`${styles.contenedorBoton} ${activeSection === opcion.id ? styles.contenedorBotonActivo : ''}`}>
                             {opcion.icono}
                             <span className={styles.titulo}>{opcion.titulo}</span>

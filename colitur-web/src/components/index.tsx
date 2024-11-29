@@ -14,3 +14,4 @@ export {default as InputTexto} from './input-texto/InputTexto';
 export {default as TabWidget} from './tab-widget/TabWidget';
 export {default as BarraLateral} from './barra-lateral/BarraLateral';
 export {default as BotonEstandarAlternativo} from './boton-estandar-alternativo/BotonEstandarAlternativo';
+export {default as Tabla} from './tabla/Tabla';
