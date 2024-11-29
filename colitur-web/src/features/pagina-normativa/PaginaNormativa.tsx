@@ -1,6 +1,8 @@
 //import { Link } from "react-router-dom"
 import styles from './PaginaNormativa.module.css';
-import { BarraNavegacion, FondoPaginas, Footer } from '../../components';
+import { BarraNavegacion, FondoPaginas, Footer} from '../../components';
+
+
 
 function PaginaNormativa()
 {

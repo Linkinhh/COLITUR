@@ -2,14 +2,16 @@ import styles from './BotonEstandar.module.css';
 
 interface Props{
     titulo: string;
+    estiloBoton?: string;
+    estiloTexto?: string;
 }
 
-function BotonEstandar({titulo}: Props)
+function BotonEstandar({titulo, estiloBoton, estiloTexto}: Props)
 {
     return(
         <button 
-            className={styles.boton}>
-            <span className={styles.spanBoton}>
+            className={`${styles.boton} ${estiloBoton || ""}`}>
+            <span className={`${styles.spanBoton} ${estiloTexto || ""}`}>
                 {titulo}
             </span>
         </button>
