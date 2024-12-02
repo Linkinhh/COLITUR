@@ -1,7 +1,8 @@
-import { BarraNavegacion, BotonEstandar, ContenedorConTitulo, FondoPaginas, FotoLicenciado, InputTexto, TituloLogoColitur } from '../../components';
+import { BarraNavegacion, BotonEstandar, ContenedorConTitulo, FondoPaginas, FotoLicenciado, InputTexto, OpcioneesServicios, TituloLogoColitur } from '../../components';
 import styles from './ServicioHabilitados.module.css';
 import imagenPortada from '../../assets/ConsultarHabilitado.jpg';
 import fotoColegiado from '../../assets/datos_personales_administrador.jpg';
+
 
 const licenciados = 
 [
@@ -78,7 +79,6 @@ const licenciados =
     },
 ]
 
-
 function ServicioHabilitados() {
     return (
         <section className={styles.content}>
@@ -111,7 +111,7 @@ function ServicioHabilitados() {
                         ))}
                     </div>
                     <BotonEstandar titulo='Ver Más' estiloBoton={styles.boton} estiloTexto={styles.textoBoton}></BotonEstandar>
-                </ContenedorConTitulo>
+                </ContenedorConTitulo>                
             </FondoPaginas>
         </section>
     )

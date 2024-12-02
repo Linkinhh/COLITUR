@@ -4,11 +4,11 @@ import styles from '../foto-licenciado/FotoLicenciado.module.css';
 //Si es VERDADERO (TRUE) entonce sirve para el servicio de Consulta de Habilitados
 interface Props{
     imagen: string;
-    nombre?: string;
+    nombre: string;
     cargo?: string;
     numero?: string;
     estado?: string;
-    mostrarBoton?: boolean; 
+    mostrarBoton: boolean; 
 }
 
 function FotoLicenciado({imagen, nombre, cargo, numero, estado, mostrarBoton}: Props){
