@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 //import { useState } from 'react';
 import './App.css';
-import {PaginaColegiatura, PaginaInicio, PaginaNormativa, IniciarSesion, Administrador, PaginaNosotros, ServicioHabilitados} from './features/index';
+import {PaginaColegiatura, PaginaInicio, PaginaNormativa, IniciarSesion, Administrador, PaginaNosotros, ServicioHabilitados, ServicioMediosdePago} from './features/index';
 
 function Fuentes()
 {
@@ -41,6 +41,7 @@ function App() {
         <Route path='/IniciarSesion' element={<IniciarSesion></IniciarSesion>}></Route>
         <Route path='/IniciarSesion/Administrador' element={<Administrador></Administrador>}></Route>
         <Route path='/ServicioHabilitados' element={<ServicioHabilitados></ServicioHabilitados>}></Route>
+        <Route path="/SevicioMediosdePago" element={<ServicioMediosdePago></ServicioMediosdePago>}></Route>
         <Route path="*" element={<div>Página no encontrada</div>} />
       </Routes>
     </Router>

@@ -50,7 +50,7 @@ const datos =
             titulo: "Medios de Pago",
             descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             // añadir ruta
-            ruta: "/"
+            ruta: "/SevicioMediosdePago"
         }
     ];
 
