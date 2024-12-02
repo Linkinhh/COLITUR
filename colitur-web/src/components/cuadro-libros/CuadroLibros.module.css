@@ -1,0 +1,33 @@
+.contenedor {
+    width: 310px;
+    height: 390px;
+}
+
+.informacionLibro {
+    width: 310px;
+    height: 45px;
+    color: var(--lightblue-color);
+    background-color: var(--yellow-color);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.informacionLibro p {
+    font-size: 13px;
+    font-weight: 700;
+    margin: 0;
+    margin-left: 10px;
+}
+
+.informacionLibro em {
+    font-size: 12px;
+    margin-left: 10px;
+    font-family: 'Inter', sans-serif;
+}
+
+.imagen {
+    width: 310px;
+    height: 345px;
+}

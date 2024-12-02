@@ -1,0 +1,42 @@
+@import "../../App.css";
+
+.content {
+    width: 100vw;
+    margin-left: -9px;
+    margin-bottom: -9px;
+    margin-top: -9px;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.listas {
+    width: 92%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.listas li {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+}
+
+.contenedorBoton {
+    width: 92%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.boton {
+    padding: 0;
+    width: 200px;
+    height: 40px;
+    border-radius: 13px;
+}
+
+.txtBoton {
+    font-size: 15px;
+}

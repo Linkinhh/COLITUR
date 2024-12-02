@@ -29,21 +29,21 @@ const datos =
             titulo: "Eventos Académicos",
             descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             // añadir ruta
-            ruta: "/"
+            ruta: "/ServicioEventos"
         },
         {
             imagen: realizarConvenios,
             titulo: "Realizar Convenios",
             descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             // añadir ruta
-            ruta: "/"
+            ruta: "/ServicioConvenios"
         },
         {
             imagen: bibliotecaVirtual,
             titulo: "Biblioteca Virtual",
             descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             // añadir ruta
-            ruta: "/"
+            ruta: "/ServicioBiblioteca"
         },
         {
             imagen: pagoVirtual,

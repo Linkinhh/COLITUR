@@ -18,17 +18,17 @@ const servicios = [
     {
         imagen: ScrollText,
         servicio: "Eventos Academicos",
-        ruta: "/"
+        ruta: "/ServicioEventos"
     },
     {
         imagen: Handshake,
         servicio: "Realizar Convenios",
-        ruta: "/ServicioHabilitados"
+        ruta: "/ServicioConvenios"
     },
     {
         imagen: LibraryBig,
         servicio: "Biblioteca Virtual",
-        ruta: "/ServicioHabilitados"
+        ruta: "/ServicioBiblioteca"
     },
     {
         imagen: CircleDollarSign,

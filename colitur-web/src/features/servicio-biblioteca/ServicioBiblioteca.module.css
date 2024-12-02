@@ -1,0 +1,62 @@
+@import "../../App.css";
+
+.content {
+    width: 100vw;
+    margin-left: -9px;
+    margin-bottom: -9px;
+    margin-top: -9px;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor {
+    width: 92%;
+    text-align: justify;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+}
+
+
+
+.buscador p {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+}
+
+.buscador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.label {
+    width: 35%;
+}
+
+.contenedorLibro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px
+}
+
+.contenedorBoton {
+    margin: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.boton {
+    padding: 0;
+    width: 100px;
+    height: 40px;
+    border-radius: 13px;
+}
+
+.txtBoton {
+    font-size: 18px;
+}
