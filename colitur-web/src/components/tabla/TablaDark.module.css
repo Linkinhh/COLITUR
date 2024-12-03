@@ -1,0 +1,137 @@
+@import "../../App.css";
+
+.tablaContenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+  }
+  
+  .filtroInput {
+    width: 80%;
+    margin-bottom: 3rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2em;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: solid white 1px;
+  }
+
+  /* TABLA */
+  .tablaPrincipal {
+    border: solid green 3px;
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid var(--white-color);
+  }
+  
+  .tablaEncabezado {
+    background-color: var(--lightblue-colorDark);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2em;
+  }
+  
+  .tablaColumna {
+    padding: 0.75rem;
+    border: 2px solid var(--white-color);
+    cursor: pointer;
+    text-align: center;
+    font-weight: normal;
+    text-align: right;
+    width: 20%;
+  }
+  
+  /* Clase para el contenedor del encabezado */
+.encabezadoConIcono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 50px; /* Ajusta este valor al tamaño deseado */
+}
+
+/* Ícono de ordenamiento */
+.iconoOrdenamiento {
+  margin-left: 5px;
+  font-size: 12px;
+  color: white;
+}
+
+/* Espaciado y alineación general */
+.textoFila {
+  padding: 15px 8px; /* Espacio interno en celdas */
+  text-align: center; /* Centra el contenido */
+  vertical-align: middle; /* Alinea verticalmente */
+  color: white;
+  font-weight: normal;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2em;
+  border: solid 2px var(--white-color);
+}
+
+/* Colores condicionales para la columna "Estado" */
+.estadoValidado {
+  color: #07c827; /* Verde */
+}
+
+.estadoPendiente {
+  color: #fbeca8; /* Amarillo */
+}
+
+.estadoRechazado {
+  color: #fa1b1b; /* Rojo */
+}
+
+  
+.tablaFila:hover {
+  background-color: var(--yellor-colorDark);
+}
+  
+.tablaCelda {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+}
+  
+.controlesPaginacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+  
+.botonAnterior, .botonSiguiente {
+  background-color: var(--lightblue-colorDark); 
+  border-radius: 18px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  font-weight: bold;
+  font-size: 1.2em;
+  color: white;
+}
+
+
+.botonAnterior:hover, .botonSiguiente:hover
+{
+  background-color: var(--darkblue-colorDark);
+  cursor: pointer;
+}
+
+.botonAnterior:disabled, .botonSiguiente:disabled {
+  background-color: var(--bone-colorDark);
+  color: white;
+  cursor: not-allowed;
+}
+
+.textoPagina
+{
+  font-size: 1.2em;
+  font-family: 'Inter',sans-serif;
+  color: white;
+}

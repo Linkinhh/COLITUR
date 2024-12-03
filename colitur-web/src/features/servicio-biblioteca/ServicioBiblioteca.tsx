@@ -1,7 +1,8 @@
 import { BarraNavegacion, BotonEstandar, ContenedorConTitulo, CuadroLibros, FondoPaginas, Footer, InputTexto } from '../../components';
 import styles from './ServicioBiblioteca.module.css';
 import libro1 from '../../assets/libro1.png';
-
+import darkStyles from '../servicio-biblioteca/ServicioBibliotecaDark.module.css';
+import { useTheme } from '../../context/ThemeContext';
 
 const libros = 
 [
@@ -49,16 +50,21 @@ const libros =
 ]
 
 function ServicioBiblioteca(){
+    const {isDarkMode} = useTheme();
+    const combinedStyles = isDarkMode 
+        ? { ...styles, ...darkStyles }
+        : styles;
+
     return(
-        <section className={styles.content}>
+        <section className={`${combinedStyles.content} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
             <BarraNavegacion></BarraNavegacion>
             <FondoPaginas>
                 <ContenedorConTitulo titulo='Biblioteca Virtual Colitur Ancash'>
-                    <div className={styles.contenedor}>
+                    <div className={`${combinedStyles.contenedor} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                         <p>Continuando con el proceso de actualización y modernización de nuestro Colegio Profesional, presentamos a todos los agremiados las versiones digitales de las Revistas Júridica del Colegio de Licenciados en Turismo de Ancash.</p>
-                        <div className={styles.buscador}>
+                        <div className={`${combinedStyles.buscador} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                             <p>Buscar: </p>
-                            <div className={styles.label}>
+                            <div className={`${combinedStyles.label} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                                 <InputTexto
                                     placeHolder='Nombre de Libro o Autor'
                                     tipo='text'
@@ -67,10 +73,10 @@ function ServicioBiblioteca(){
                                 ></InputTexto>
                             </div>
                         </div>
-                        <div className={styles.contenedorBoton}>
-                            <BotonEstandar titulo='Buscar' estiloBoton={styles.boton} estiloTexto={styles.txtBoton}></BotonEstandar>
+                        <div className={`${combinedStyles.contenedorBoton} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
+                            <BotonEstandar titulo='Buscar' estiloBoton={`${combinedStyles.boton} ${isDarkMode ? combinedStyles.darkMode : ''}`} estiloTexto={`${combinedStyles.txtBoton} ${isDarkMode ? combinedStyles.darkMode : ''}`}></BotonEstandar>
                         </div> 
-                        <div className={styles.contenedorLibro}>
+                        <div className={`${combinedStyles.contenedorLibro} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                             {libros.map((data, index) => (
                                 <CuadroLibros
                                     key={index}
@@ -81,8 +87,8 @@ function ServicioBiblioteca(){
                                 ></CuadroLibros>
                             ))}
                         </div>
-                        <div className={styles.contenedorBoton}>
-                            <BotonEstandar titulo='Ver Más' estiloBoton={styles.boton} estiloTexto={styles.txtBoton}></BotonEstandar>
+                        <div className={`${combinedStyles.contenedorBoton} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
+                            <BotonEstandar titulo='Ver Más' estiloBoton={`${combinedStyles.boton} ${isDarkMode ? combinedStyles.darkMode : ''}`} estiloTexto={`${combinedStyles.txtBoton} ${isDarkMode ? combinedStyles.darkMode : ''}`}></BotonEstandar>
                         </div> 
                     </div>
                 </ContenedorConTitulo>

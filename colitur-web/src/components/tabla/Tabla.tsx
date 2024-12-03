@@ -1,5 +1,7 @@
 import { useState, useMemo } from 'react';
 import styles from "./Tabla.module.css";
+import { useTheme } from '../../context/ThemeContext';
+import darkStyles from '../tabla/TablaDark.module.css';
 
 // Estructuras de objetos
 interface PagosValidacion {
@@ -109,30 +111,35 @@ const Tabla = () => {
         }
     }
 
+    const {isDarkMode} = useTheme();
+    const combinedStyles = isDarkMode 
+        ? { ...styles, ...darkStyles }
+        : styles;
+
     return (
-        <div className={styles.tablaContenedor}>
+        <div className={`${combinedStyles.tablaContenedor} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
             {/* Añadir para que tan solo busque por número*/}
             <input
                 type="text"
                 placeholder="Buscar por Número de Voucher de Pago"
                 value={filterText}
                 onChange={(e) => setFilterText(e.target.value)}
-                className={styles.filtroInput}
+                className={`${combinedStyles.filtroInput} ${isDarkMode ? combinedStyles.darkMode : ''}`}
             />
 
             {/* Tabla */}
-            <table className={styles.tablaPrincipal}>
+            <table className={`${combinedStyles.tablaPrincipal} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 <thead>
-                    <tr className={styles.tablaEncabezado}>
+                    <tr className={`${combinedStyles.tablaEncabezado} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                         {['N° Pago', 'N° Colegiado', 'Fecha', 'Estado', 'Acción'].map((header, index) => (
                             <th
                                 key={header}
                                 onClick={() => handleSort(Object.keys(data[0])[index] as keyof PagosValidacion)}
-                                className={styles.tablaColumna}
+                                className={`${combinedStyles.tablaColumna} ${isDarkMode ? combinedStyles.darkMode : ''}`}
                             >
-                                <div className={styles.encabezadoConIcono}>
+                                <div className={`${combinedStyles.encabezadoConIcono} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                                     {header}
-                                    <span className={styles.iconoOrdenamiento}>
+                                    <span className={`${combinedStyles.iconoOrdenamiento} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                                         {sortConfig.key === Object.keys(data[0])[index] &&
                                             (sortConfig.direction === 'ascending' ? '▲' : '▼')}
                                     </span>
@@ -143,7 +150,7 @@ const Tabla = () => {
                 </thead>
                 <tbody>
                 {paginatedData.map((item, index) => (
-                    <tr key={index} className={styles.tablaFila}>
+                    <tr key={index} className={`${combinedStyles.tablaFila} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                         {(Object.entries(item) as [keyof PagosValidacion, any][]).map(([key, value]) => {
                             // Verifica si la columna es "estado" y aplica un color condicional
                             const isEstado = key === 'estado';
@@ -151,16 +158,16 @@ const Tabla = () => {
 
                             if (isEstado) {
                                 estadoClase = value === 'Validado' 
-                                    ? styles.estadoValidado 
+                                    ? combinedStyles.estadoValidado 
                                     : value === 'Pendiente' 
-                                    ? styles.estadoPendiente 
-                                    : styles.estadoRechazado;
+                                    ? combinedStyles.estadoPendiente 
+                                    : combinedStyles.estadoRechazado;
                             }
 
                             return (
                                 <td
                                     key={key}
-                                    className={`${styles.textoFila} ${isEstado ? estadoClase : ''}`}
+                                    className={`${combinedStyles.textoFila} ${isEstado ? estadoClase : ''} ${isDarkMode ? combinedStyles.darkMode : ''}`}
                                 >
                                     {value instanceof Date 
                                         ? value.toLocaleDateString() 
@@ -174,15 +181,15 @@ const Tabla = () => {
             </table>
     
             {/* Controles de Paginación */}
-            <div className={styles.controlesPaginacion}>
+            <div className={`${combinedStyles.controlesPaginacion} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 <button
                     onClick={() => setCurrentPage(page => Math.max(1, page - 1))}
                     disabled={currentPage === 1}
-                    className={styles.botonAnterior}
+                    className={`${combinedStyles.botonAnterior} ${isDarkMode ? combinedStyles.darkMode : ''}`}
                 >
                     Anterior
                 </button>
-                <span className={styles.textoPagina}>
+                <span className={`${combinedStyles.textoPagina} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                     Página {currentPage} de {Math.ceil(filteredData.length / itemsPerPage)}
                 </span>
                 <button
@@ -192,7 +199,7 @@ const Tabla = () => {
                         : page
                     )}
                     disabled={currentPage >= Math.ceil(filteredData.length / itemsPerPage)}
-                    className={styles.botonSiguiente}
+                    className={`${combinedStyles.botonSiguiente} ${isDarkMode ? combinedStyles.darkMode : ''}`}
                 >
                     Siguiente
                 </button>
