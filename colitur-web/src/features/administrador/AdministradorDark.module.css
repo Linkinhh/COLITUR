@@ -1,0 +1,102 @@
+@import "../../App.css";
+
+html, body {
+    margin: 0; /* Elimina márgenes */
+    padding: 0; /* Elimina paddings */
+    width: 100%; /* Asegura que ocupen todo el ancho */
+    height: 100%; /* Asegura que ocupen toda la altura */
+    box-sizing: border-box; /* Ajusta el modelo de caja */
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedorPrincipalFormulario
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+    margin-top: 70px;
+}
+
+.contenedorNombreCampo
+{
+    display: flex;
+    align-items: center;
+    min-width: 200px; /* Asegura un ancho mínimo para el label */
+    white-space: nowrap;
+}
+/*
+remover algún atributo
+implementar redes neuronales
+PCA
+*/
+
+.nombreCampo
+{
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    width: 30%;
+    color: white;
+}
+
+.contenedorFormulario
+{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.contenedorBuscarLibro
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 60%;
+    gap: 10px;
+}
+
+.cerrarSesion
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.pregunta
+{
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.botones
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 150px
+}
+
+.botones > *
+{
+    width: 15rem;
+}
+
+.imagen {
+    width: 210px;
+    height: 210px;
+}

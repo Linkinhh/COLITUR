@@ -1,0 +1,46 @@
+@import "../../App.css";
+
+html, body {
+    margin: 0; /* Elimina márgenes */
+    padding: 0; /* Elimina paddings */
+    width: 100%; /* Asegura que ocupen todo el ancho */
+    height: 100%; /* Asegura que ocupen toda la altura */
+    box-sizing: border-box; /* Ajusta el modelo de caja */
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.listas {
+    width: 92%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.listas li {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+}
+
+.contenedorBoton {
+    width: 92%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.boton {
+    padding: 0;
+    width: 200px;
+    height: 40px;
+    border-radius: 13px;
+}
+
+.txtBoton {
+    font-size: 15px;
+}

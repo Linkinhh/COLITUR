@@ -1,5 +1,7 @@
 import { useState } from "react";
 import styles from "./TabWidget.module.css";
+import { useTheme } from "../../context/ThemeContext";
+import darkStyles from '../tab-widget/TabWidgetDark.module.css';
 
 interface Tab
 {
@@ -21,21 +23,26 @@ const TabWidget: React.FC<TabWidgetProps> = ({ tabs, isVisible }) => {
     const[activeTab, setActiveTab] = useState(tabs[0]?.id)
 
     if(!isVisible) return null;
+
+    const {isDarkMode} = useTheme();
+    const combinedStyles = isDarkMode 
+        ? { ...styles, ...darkStyles }
+        : styles;
     
     return(
-        <div className={styles.contenedorPrincipal}>
-            <div className={styles.contenedorTitulo}>
+        <div className={`${combinedStyles.contenedorPrincipal} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
+            <div className={`${combinedStyles.contenedorTitulo} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 {tabs.map((tab) => (
                     <button
                     key={tab.id}
                     onClick={()=>setActiveTab(tab.id)}
-                    className={`${styles.contenedorPestana} ${activeTab === tab.id ? styles.contenedorPestanaActiva : ''}`}>
+                    className={`${combinedStyles.contenedorPestana} ${activeTab === tab.id ? combinedStyles.contenedorPestanaActiva : ''} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                         {tab.icono}
-                        <span className={styles.titulo}>{tab.titulo}</span>
+                        <span className={`${combinedStyles.titulo} ${isDarkMode ? combinedStyles.darkMode : ''}`}>{tab.titulo}</span>
                     </button>
                 ))}
             </div>
-            <div className={styles.contenedorContenido}>
+            <div className={`${combinedStyles.contenedorContenido} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 {tabs.find((tab)=> tab.id === activeTab)?.contenido}
             </div>
         </div>

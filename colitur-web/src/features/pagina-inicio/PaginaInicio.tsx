@@ -1,4 +1,4 @@
-import { BarraNavegacion, Footer, TituloLogoColitur, FondoPaginas, ContenedorConTitulo, CuadroServicio, CuadroNoticia } from "../../components";
+import { BarraNavegacion, Footer, TituloLogoColitur, FondoPaginas, ContenedorConTitulo, CuadroServicio, CuadroNoticia, BotonAccesibilidad } from "../../components";
 import styles from "../pagina-inicio/PaginaInicio.module.css";
 import consultarHabilitados from "../../assets/Consultar_Habilitados.svg";
 import eventosAcademicos from "../../assets/Eventos_Academicos.svg";
@@ -29,21 +29,21 @@ const datos =
             titulo: "Eventos Académicos",
             descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             // añadir ruta
-            ruta: "/"
+            ruta: "/ServicioEventos"
         },
         {
             imagen: realizarConvenios,
             titulo: "Realizar Convenios",
             descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             // añadir ruta
-            ruta: "/"
+            ruta: "/ServicioConvenios"
         },
         {
             imagen: bibliotecaVirtual,
             titulo: "Biblioteca Virtual",
             descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             // añadir ruta
-            ruta: "/"
+            ruta: "/ServicioBiblioteca"
         },
         {
             imagen: pagoVirtual,

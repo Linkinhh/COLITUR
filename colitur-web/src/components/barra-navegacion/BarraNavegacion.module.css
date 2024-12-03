@@ -28,3 +28,85 @@
     top: 0;
     left: 0;
 }
+
+.contendorServicios {
+    position: relative;
+}
+
+.servicioDesplegable {
+    position: absolute; /* Cambia de absolute a fixed */
+    top:60px; /* Ajusta según la altura de tu barra de navegación */
+    left: 20px; /* O ajusta según la posición exacta que quieras */
+    width: 100%; /* Ocupa todo el ancho */
+    background-color: var(--white-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    display: none;
+}
+
+.contendorServicios:hover .servicioDesplegable {
+    display: block;
+}
+
+/* Estilos para el botón hamburguesa */
+.botonHamburguesa {
+    display: none; /* Oculto por defecto */
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.contenedorHamburguesa
+{
+    display: none;
+}
+
+.logoMenuHamburguesa
+{
+    display: none;
+}
+
+.accesibilidad {
+    position: fixed;
+    right: 0;
+    top: 30%;
+    z-index: 1000;
+}
+
+/* Media Query para convertir en menú hamburguesa */
+@media screen and (max-width: 993px) {
+    .fijo
+    {
+        display: none;
+    }
+    .fondoBarra, .logoMenuHamburguesa, .botonHamburguesa
+    {
+        display: inline;
+    }
+
+    .contenedorHamburguesa
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        width: 100vw;
+        background-color: var(--white-color);
+        z-index: 1000;
+        top: 0;
+        left: 0;
+    }
+
+    .desplegableHamburguesa
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 100%;
+        border-top: solid 5px var(--bone-color);
+        background-color: var(--white-color);
+        width: 100%;
+    }
+}

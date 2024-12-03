@@ -1,0 +1,53 @@
+@import "../../App.css";
+
+html, body {
+    margin: 0; /* Elimina márgenes */
+    padding: 0; /* Elimina paddings */
+    width: 100%; /* Asegura que ocupen todo el ancho */
+    height: 100%; /* Asegura que ocupen toda la altura */
+    box-sizing: border-box; /* Ajusta el modelo de caja */
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.buscador {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 95%;
+    color: white;
+}
+
+.label {
+    width: 50%;
+}
+
+.buscador p{
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.boton{
+    width: 10%;
+    height: 50px;
+    margin: 20px;
+}
+
+.textoBoton{
+    font-size: 18px;
+}
+
+.contenedorLicenciados {
+    width: 90%;
+    margin-top: 25px;
+    gap: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}

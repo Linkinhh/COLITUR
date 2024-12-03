@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
 import styles from './ContenedorConTitulo.module.css';
+import darkStyles from './ContenedorConTituloDark.module.css';
+import { useTheme } from '../../context/ThemeContext';
 
 interface Props
 {
@@ -9,17 +11,29 @@ interface Props
 
 function Titulo ({titulo}: Props)
 {
+
+    const {isDarkMode} = useTheme();
+    const combinedStyles = isDarkMode 
+        ? { ...styles, ...darkStyles }
+        : styles;
+
     return(
-        <div className={styles.cuadroTitulo}>
-            <span className={styles.titulo}>{titulo}</span>
+        <div className={`${combinedStyles.cuadroTitulo} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
+            <span className={`${combinedStyles.titulo} ${isDarkMode ? combinedStyles.darkMode : ''}`}>{titulo}</span>
         </div>
     )
 }
 
 function ContenedorConTitulo ({titulo, children}: Props)
 {
+
+    const {isDarkMode} = useTheme();
+    const combinedStyles = isDarkMode 
+        ? { ...styles, ...darkStyles }
+        : styles;
+
     return(
-        <section className={styles.contenedor}>
+        <section className={`${combinedStyles.contenedor} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
             <Titulo titulo = {titulo}></Titulo>
             {children}
         </section>

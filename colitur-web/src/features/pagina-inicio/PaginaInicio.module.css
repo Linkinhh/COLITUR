@@ -1,12 +1,16 @@
 @import "../../App.css";
 
+html, body {
+    margin: 0; /* Elimina márgenes */
+    padding: 0; /* Elimina paddings */
+    width: 100%; /* Asegura que ocupen todo el ancho */
+    height: 100%; /* Asegura que ocupen toda la altura */
+    box-sizing: border-box; /* Ajusta el modelo de caja */
+}
+
 .content {
-    width: 100vw;
-    margin-left: -9px;
-    margin-bottom: -9px;
-    margin-top: -9px;
-    padding: 0;
-    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -29,14 +33,19 @@
     margin-bottom: 54px;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .contenedorConvenios
 {
     width: 95%;
+    background-color: white;
     margin-top: 54px;
     margin-bottom: 54px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }

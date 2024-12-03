@@ -1,0 +1,40 @@
+@import "../../App.css";
+
+html, body {
+    margin: 0; /* Elimina márgenes */
+    padding: 0; /* Elimina paddings */
+    width: 100%; /* Asegura que ocupen todo el ancho */
+    height: 100%; /* Asegura que ocupen toda la altura */
+    box-sizing: border-box; /* Ajusta el modelo de caja */
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor {
+    width: 92%;
+    text-align: justify;
+    font-family: Inter;
+    font-size: 18px;
+    margin: 20px;
+    color: white;
+}
+
+.contenedorLicenciados {
+    width: 90%;
+    margin-top: 25px;
+    gap: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contenedor span {
+    font-style: normal;
+    font-weight: 400;
+    line-height: 33px;
+}

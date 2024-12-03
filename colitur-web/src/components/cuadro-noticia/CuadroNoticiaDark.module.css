@@ -1,0 +1,65 @@
+@import "../../App.css";
+
+.contenedor
+{
+    display: flex;
+    flex-direction: column;
+    border: none;
+}
+
+.contenedorImagen{
+    width: 458px;
+    height: 456px;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+
+    transition: opacity 0.5s ease;
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+}
+
+.contenedorFecha
+{
+    transition: opacity 0.5s ease;
+    opacity: 0;
+
+    color: var(--white-color);
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+
+    width: 58px;
+    height: 63px;
+    background-color: var(--yellow-colorDark);
+    display: flex;
+    align-items: center;
+}
+
+.separador
+{
+    border: none;
+    width: 100%;
+    height: 25px;
+    background-color: var(--bone-colorDark);
+}
+
+.contenedorImagen:hover .contenedorFecha
+{
+    opacity: 1;
+}
+
+.contenedorImagen:hover
+{
+    cursor: pointer;
+}

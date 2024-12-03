@@ -7,4 +7,12 @@
   --white-color: #FFFFFF;
   --grey-color: #6b6b6b;
   --yellow-color-letter: #A77E00;
+
+  --yellow-colorDark: #5B5C5D;
+  --lightblue-colorDark: #3A3B3C;
+  --darkblue-colorDark: #000000;
+  --bone-colorDark: #18191A;
+  --white-colorDark: #242526;
+  --grey-colorDark: #18191A;
+  --yellow-color-letterDark: #FBECA8;
 }
