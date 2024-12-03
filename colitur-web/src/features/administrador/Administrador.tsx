@@ -1,5 +1,5 @@
 import styles from "./Administrador.module.css";
-import { BarraLateral, BarraNavegacion, FondoPaginas, Footer, TabWidget, InputTexto, BotonEstandarImagen, BotonEstandar, BotonEstandarAlternativo } from "../../components";
+import { BarraLateral, BarraNavegacion, FondoPaginas, Footer, TabWidget, InputTexto, BotonEstandarImagen, BotonEstandar, BotonEstandarAlternativo, Tabla } from "../../components";
 //import Tab from "../../components/tab-widget/TabWidget";
 import {CircleUser, LockKeyhole, UserPlus, CreditCard, Newspaper, BookText, LogOut, Upload, BookPlus, BookCheck, BookX, Search} from "lucide-react";
 import imagen from "../../assets/datos_personales_administrador.jpg";
@@ -533,7 +533,7 @@ const tabsGerenciarBiblioteca = [
 const opciones = [
     { id: '1', icono: <CircleUser />, titulo: 'Datos Personales', tituloSeccion: 'Ficha de Datos Personales', children: <TabWidget tabs={tabsDatosPersonales} isVisible = {true}></TabWidget>},
     { id: '2', icono: <UserPlus />, titulo: 'Registrar Colegiado', tituloSeccion: 'Registrar Nuevo Colegiado', children: <FormularioRegistrarColegiado/>},
-    { id: '3', icono: <CreditCard />, titulo: 'Validación de Pagos', tituloSeccion: 'Pagos Pendientes de Validacion',children: <h1>PENDIENTE</h1>},
+    { id: '3', icono: <CreditCard />, titulo: 'Validación de Pagos', tituloSeccion: 'Pagos Pendientes de Validacion',children: <Tabla></Tabla>},
     { id: '4', icono: <Newspaper />, titulo: 'Subir Publicaciones', tituloSeccion: 'Subir Publicaciones', children: <FormularioSubirPublicaciones />},
     { id: '5', icono: <BookText />, titulo: 'Gerenciar Biblioteca', tituloSeccion: 'Gerenciamiento de Biblioteca Virtual', children: <TabWidget tabs={tabsGerenciarBiblioteca} isVisible = {true}></TabWidget>},
     { id: '6', icono: <LogOut />, titulo: 'Cerrar Sesión', tituloSeccion: 'Cerrar Sesión', children: <CerrarSesion/>}

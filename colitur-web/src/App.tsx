@@ -5,6 +5,8 @@ import './App.css';
 import {PaginaColegiatura, PaginaInicio, PaginaNormativa, IniciarSesion, Administrador, PaginaNosotros, ServicioHabilitados, ServicioEventos, ServicioBiblioteca, ServicioConvenios} from './features/index';
 import { ThemeProvider } from './context/ThemeContext';
 
+// CORREGIR ESTILOS DE NORMATIVA
+
 function Fuentes()
 {
   return(

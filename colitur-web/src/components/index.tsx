@@ -15,6 +15,7 @@ export {default as TabWidget} from './tab-widget/TabWidget';
 export {default as BarraLateral} from './barra-lateral/BarraLateral';
 export {default as BotonEstandarAlternativo} from './boton-estandar-alternativo/BotonEstandarAlternativo';
 export {default as FotoLicenciado} from './foto-licenciado/FotoLicenciado';
+export {default as Tabla} from './tabla/Tabla';
 export {default as OpcioneesServicios} from './opcriones-servicios/OpcionesServicios';
 export {default as CuadroEventos} from './cuadro-eventos/CuadroEventos';
 export {default as CuadroLibros} from './cuadro-libros/CuadroLibros';
