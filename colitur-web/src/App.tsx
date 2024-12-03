@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-route
 import './App.css';
 import {PaginaColegiatura, PaginaInicio, PaginaNormativa, IniciarSesion, Administrador, PaginaNosotros, ServicioHabilitados} from './features/index';
 
+// CORREGIR ESTILOS DE NORMATIVA
+
 function Fuentes()
 {
   return(
