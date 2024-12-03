@@ -1,17 +1,24 @@
 //import { Link } from "react-router-dom"
 import styles from './PaginaNormativa.module.css';
 import { BarraNavegacion, FondoPaginas, Footer} from '../../components';
-
+import darkStyles from './PaginaNormativaDark.module.css';
+import { useTheme } from '../../context/ThemeContext';
 
 
 function PaginaNormativa()
 {
+
+    const {isDarkMode} = useTheme();
+    const combinedStyles = isDarkMode 
+        ? { ...styles, ...darkStyles }
+        : styles;
+
     return(
         <>
-            <div className={styles.content}>
+            <div className={`${combinedStyles.content} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 <BarraNavegacion></BarraNavegacion>
                 <FondoPaginas>
-                    <section className={styles.contenedor} >
+                    <section className={`${combinedStyles.contenedor} ${isDarkMode ? combinedStyles.darkMode : ''}`} >
                         <h1>Colegio de Lincenciados en Turismo</h1>
                         <ul>
                             <li>En 1988 se promulga la <a href="https://drive.google.com/file/d/1UVLIDCCUq_s2WSohwUGVvokUy3IzqpPU/view?usp=sharing">Ley N°24915</a> y su <a href="https://drive.google.com/file/d/1PCI-vPMGrvVNIG4nHoM69bAXBTI9PPPx/view?usp=sharing">Estatuto D. S. Nº 012-90-ICTI-TUR</a> que crea El Colegio de Licenciados en Turismo del Perú. </li>

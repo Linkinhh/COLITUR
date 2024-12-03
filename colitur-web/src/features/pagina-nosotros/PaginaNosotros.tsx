@@ -1,7 +1,9 @@
 import styles from './PaginaNosotros.module.css';
 import { BarraNavegacion, FondoPaginas, Footer, TituloLogoColitur, ContenedorConTitulo, FotoLicenciado} from '../../components';
 import portada from '../../assets/Nosotros.jpg';
-import licenciado from '../../assets/datos_personales_administrador.jpg'
+import licenciado from '../../assets/datos_personales_administrador.jpg';
+import darkStyles from './PaginaNosotrosDark.module.css';
+import { useTheme } from '../../context/ThemeContext';
 
 const licenciados = 
 [
@@ -71,14 +73,20 @@ const licenciados =
 
 function PaginaNosotros ()
 {
+
+    const {isDarkMode} = useTheme();
+    const combinedStyles = isDarkMode 
+        ? { ...styles, ...darkStyles }
+        : styles;
+
     return (
         <>
-            <div className={styles.content}>
-                <div className={styles.barraNavegacion}><BarraNavegacion></BarraNavegacion></div>
+            <div className={`${combinedStyles.content} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
+                <div className={`${combinedStyles.barraNavegacion} ${isDarkMode ? combinedStyles.darkMode : ''}`}><BarraNavegacion></BarraNavegacion></div>
                 <TituloLogoColitur titulo={"Nosotros"} imagen={portada}></TituloLogoColitur>
                 <FondoPaginas>
                     <ContenedorConTitulo titulo={'Historia'}>
-                        <div className={styles.contenedor}>
+                        <div className={`${combinedStyles.contenedor} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                             <span>En 1988, gracias al trabajo de un grupo de profesionales de turismo  de Lima y Cusco se logra la promulgación de la Ley 24915 que crea el  Colegio de Licenciados en Turismo del Perú el cual estaba conformado por los Consejos Regionales de Turismo de los diferentes departamentos del  país.</span>
                             <br />
                             <span>En el año 1990 se dicta el Decreto Supremo Nº 012-90-ICTI-TUR con los estatutos de la Ley 24915</span>
@@ -99,17 +107,17 @@ function PaginaNosotros ()
                         </div>
                     </ContenedorConTitulo>
                     <ContenedorConTitulo titulo={'Visión'}>
-                        <div className={styles.contenedor}>
+                        <div className={`${combinedStyles.contenedor} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                             <span>En el 2025 el Colegio de Licenciados en Turismo de Lima Metropolitana es una organización reconocida por su liderazgo a nivel nacional que contribuye al fortalecimiento de la actividad turística regional y  nacional, en defensa del ejercicio profesional y de los derechos de sus  colegiados.</span>
                         </div>
                     </ContenedorConTitulo>
                     <ContenedorConTitulo titulo={'Misión'}>
-                        <div className={styles.contenedor}>
+                        <div className={`${combinedStyles.contenedor} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                             <span>Somos una organización autónoma de derecho público interno,  representante de los licenciados en turismo de Lima y promovemos el  desarrollo del turismo sostenible generando alianzas estratégicas con  instituciones públicas y privadas para mejorar las capacidades de  nuestros colegiados y contribuir al desarrollo del turismo como  actividad fundamental en el desarrollo de nuestro país.</span>
                         </div>
                     </ContenedorConTitulo>
                     <ContenedorConTitulo titulo={'Consejo Directivo (2024-2025)'}>
-                        <div className={styles.contenedor}>
+                        <div className={`${combinedStyles.contenedor} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                             <ul>
                                 <li><strong>Decano:</strong> Lic. Tmo. Jhonatan Castillo Haro</li>
                                 <li><strong>Vice-Decana:</strong> Lic. Tmo. Dora Camino Loli</li>
@@ -123,7 +131,7 @@ function PaginaNosotros ()
                             </ul>
                         </div>
                     </ContenedorConTitulo>
-                    <div className={styles.contenedorLicenciados}>
+                    <div className={`${combinedStyles.contenedorLicenciados} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                         {licenciados.map((data, index) =>(
                             <FotoLicenciado
                                 key={index}

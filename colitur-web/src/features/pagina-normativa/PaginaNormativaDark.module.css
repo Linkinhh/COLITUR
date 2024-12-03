@@ -1,0 +1,47 @@
+@import "../../App.css";
+
+.content {
+    width: 100vw;
+    margin-left: -9px;
+    margin-bottom: -9px;
+    margin-top: -9px;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor a {
+    color: var(--yellow-color-letterDark);
+}
+
+.contenedor {
+    width: 90%;
+    background-color: var(--white-colorDark);
+    display: flex;
+    border: none 0px;
+    flex-direction: column;
+    padding: 25px;
+    margin-top: 27px;
+    margin-bottom: 27px;
+}
+
+.contenedor h1 {
+    color: var(--white-color);
+    font-size: 32px;
+    font-family: 'Inter', sans-serif;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.contenedor li{
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    text-align: justify;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.contenedorLicenciado {
+    width: 50%;
+}

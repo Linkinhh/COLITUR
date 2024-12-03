@@ -1,5 +1,7 @@
 import styles from "./CuadroEventos.module.css";
 import BotonEstandar from "../boton-estandar/BotonEstandar";
+import darkStyles from './CuadroEventosDark.module.css';
+import { useTheme } from "../../context/ThemeContext";
 
 interface Props{
     imagen: string
@@ -7,11 +9,17 @@ interface Props{
 }
 
 function CuadroEventos ({imagen, ruta}: Props) {
+
+    const {isDarkMode} = useTheme();
+    const combinedStyles = isDarkMode 
+        ? { ...styles, ...darkStyles }
+        : styles;
+
     return (
-        <div className={styles.contenedor}>
-            <img src={imagen} className={styles.imagen} alt="Imagen de una Noticia" />
+        <div className={`${combinedStyles.contenedor} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
+            <img src={imagen} className={`${combinedStyles.imagen} ${isDarkMode ? combinedStyles.darkMode : ''}`} alt="Imagen de una Noticia" />
             <a href={ruta} style={{textDecoration: 'none'}}>
-                <BotonEstandar titulo="Ver más" estiloBoton={styles.boton} estiloTexto={styles.txtBoton}></BotonEstandar>
+                <BotonEstandar titulo="Ver más" estiloBoton={`${combinedStyles.boton} ${isDarkMode ? combinedStyles.darkMode : ''}`} estiloTexto={`${combinedStyles.txtBoton} ${isDarkMode ? combinedStyles.darkMode : ''}`}></BotonEstandar>
             </a>
         </div>
     )

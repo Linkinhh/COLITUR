@@ -34,6 +34,7 @@
 .contenedorConvenios
 {
     width: 95%;
+    background-color: white;
     margin-top: 54px;
     margin-bottom: 54px;
     display: flex;

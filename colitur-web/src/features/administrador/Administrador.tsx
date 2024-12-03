@@ -6,6 +6,9 @@ import imagen from "../../assets/datos_personales_administrador.jpg";
 import imagen2 from "../../assets/subir_publicaciones_administrador.jpg";
 import pdf from "../../assets/PDF.png";
 import { Link } from "react-router-dom";
+import darkStyles from './AdministradorDark.module.css';
+import { useTheme } from "../../context/ThemeContext";
+
 interface CampoTextoProps
 {
     nombre: string;
@@ -16,9 +19,15 @@ interface CampoTextoProps
 
 function CampoTexto({nombre, place, detalle, tipo="text"}: CampoTextoProps)
 {
+
+    const {isDarkMode} = useTheme();
+    const combinedStyles = isDarkMode 
+        ? { ...styles, ...darkStyles }
+        : styles;
+
     return(
-        <div className={styles.contenedorNombreCampo}>
-            <span className={styles.nombreCampo}>{nombre}</span>
+        <div className={`${combinedStyles.contenedorNombreCampo} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
+            <span className={`${combinedStyles.nombreCampo} ${isDarkMode ? combinedStyles.darkMode : ''}`}>{nombre}</span>
             <InputTexto placeHolder={place} detalle={detalle} tipo={tipo} mostrarAyuda={true}></InputTexto>
         </div>
     );
@@ -82,12 +91,18 @@ const formularioDatosPersonales = [
 ]
 function FormularioDatosPersonales ()
 {
+
+    const {isDarkMode} = useTheme();
+    const combinedStyles = isDarkMode 
+        ? { ...styles, ...darkStyles }
+        : styles;
+
     return(
         
-        <div className={styles.contenedorPrincipalFormulario}>
+        <div className={`${combinedStyles.contenedorPrincipalFormulario} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
             <img src={imagen}></img>
             <BotonEstandarImagen nombre="Cargar Imagen" conSombra={false} children={<Upload size={24} color="#FFFFFF" />}></BotonEstandarImagen>
-            <div className={styles.contenedorFormulario}>
+            <div className={`${combinedStyles.contenedorFormulario} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 {formularioDatosPersonales.map((data, index)=>(
                     <CampoTexto
                         key={index}
@@ -97,7 +112,7 @@ function FormularioDatosPersonales ()
                     ></CampoTexto>
                 ))}
             </div>
-            <div className={styles.botones}>
+            <div className={`${combinedStyles.botones} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 <BotonEstandar titulo="Actualizar"></BotonEstandar>
                 <BotonEstandarAlternativo titulo="Cancelar"></BotonEstandarAlternativo>
             </div>
@@ -176,12 +191,18 @@ const formularioRegistrarColegiado = [
 ]
 function FormularioRegistrarColegiado ()
 {
+
+    const {isDarkMode} = useTheme();
+    const combinedStyles = isDarkMode 
+        ? { ...styles, ...darkStyles }
+        : styles;
+
     return(
         
-        <div className={styles.contenedorPrincipalFormulario}>
+        <div className={`${combinedStyles.contenedorPrincipalFormulario} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
             <img src={imagen}></img>
             <BotonEstandarImagen nombre="Cargar Imagen" conSombra={false} children={<Upload size={24} color="#FFFFFF" />}></BotonEstandarImagen>
-            <div className={styles.contenedorFormulario}>
+            <div className={`${combinedStyles}.contenedorFormulario ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 {formularioRegistrarColegiado.map((data, index)=>(
                     <CampoTexto
                         key={index}
@@ -191,7 +212,7 @@ function FormularioRegistrarColegiado ()
                     ></CampoTexto>
                 ))}
             </div>
-            <div className={styles.botones}>
+            <div className={`${combinedStyles.botones} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 <BotonEstandar titulo="Registrar"></BotonEstandar>
                 <BotonEstandarAlternativo titulo="Cancelar"></BotonEstandarAlternativo>
             </div>
@@ -201,10 +222,16 @@ function FormularioRegistrarColegiado ()
 
 function FormularioCambiarContraseña()
 {
+
+    const {isDarkMode} = useTheme();
+    const combinedStyles = isDarkMode 
+        ? { ...styles, ...darkStyles }
+        : styles;
+
     return(
         
-        <div className={styles.contenedorPrincipalFormulario}>
-            <div className={styles.contenedorFormulario}>
+        <div className={`${combinedStyles.contenedorPrincipalFormulario} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
+            <div className={`${combinedStyles.contenedorFormulario} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 <CampoTexto
                 nombre="Contraseña Actual"
                 place="Debe coincidir con la contraseña que declaró al crear su cuenta"
@@ -218,7 +245,7 @@ function FormularioCambiarContraseña()
                 place="Debe coincidir con la contraseña que acaba de digitar"
                 tipo="password"></CampoTexto>
             </div>
-            <div className={styles.botones}>
+            <div className={`${combinedStyles.botones} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 <BotonEstandar titulo="Actualizar"></BotonEstandar>
                 <BotonEstandarAlternativo titulo="Cancelar"></BotonEstandarAlternativo>
             </div>
@@ -274,12 +301,18 @@ const formularioSubirPublicaciones = [
 
 function FormularioSubirPublicaciones ()
 {
+
+    const {isDarkMode} = useTheme();
+    const combinedStyles = isDarkMode 
+        ? { ...styles, ...darkStyles }
+        : styles;
+
     return(
         
-        <div className={styles.contenedorPrincipalFormulario}>
+        <div className={`${combinedStyles.contenedorPrincipalFormulario} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
             <img src={imagen2}></img>
             <BotonEstandarImagen nombre="Cargar Imagen" conSombra={false} children={<Upload size={24} color="#FFFFFF" />}></BotonEstandarImagen>
-            <div className={styles.contenedorFormulario}>
+            <div className={`${combinedStyles.contenedorFormulario} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 {formularioSubirPublicaciones.map((data, index)=>(
                     <CampoTexto
                         key={index}
@@ -289,7 +322,7 @@ function FormularioSubirPublicaciones ()
                     ></CampoTexto>
                 ))}
             </div>
-            <div className={styles.botones}>
+            <div className={`${combinedStyles.botones} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 <BotonEstandar titulo="Publicar"></BotonEstandar>
                 <BotonEstandarAlternativo titulo="Cancelar"></BotonEstandarAlternativo>
             </div>
@@ -360,12 +393,19 @@ const formularioRegistrarLibro = [
 
 function FormularioRegistrarLibro()
 {
+
+    const {isDarkMode} = useTheme();
+    const combinedStyles = isDarkMode 
+        ? { ...styles, ...darkStyles }
+        : styles;
+
+
     return(
         
-        <div className={styles.contenedorPrincipalFormulario}>
+        <div className={`${combinedStyles.contenedorPrincipalFormulario} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
             <img src={pdf}></img>
             <BotonEstandarImagen nombre="Cargar PDF" conSombra={false} children={<Upload size={24} color="#FFFFFF" />}></BotonEstandarImagen>
-            <div className={styles.contenedorFormulario}>
+            <div className={`${combinedStyles.contenedorFormulario} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 {formularioRegistrarLibro.map((data, index)=>(
                     <CampoTexto
                         key={index}
@@ -375,7 +415,7 @@ function FormularioRegistrarLibro()
                     ></CampoTexto>
                 ))}
             </div>
-            <div className={styles.botones}>
+            <div className={`${combinedStyles.botones} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 <BotonEstandar titulo="Registrar"></BotonEstandar>
                 <BotonEstandarAlternativo titulo="Cancelar"></BotonEstandarAlternativo>
             </div>
@@ -446,10 +486,17 @@ const formularioActualizarLibro = [
 
 function FormularioActualizarLibro()
 {
+
+    const {isDarkMode} = useTheme();
+    const combinedStyles = isDarkMode 
+        ? { ...styles, ...darkStyles }
+        : styles;
+
+
     return(
-        <div className={styles.contenedorPrincipalFormulario}>
-            <div className={styles.contenedorBuscarLibro}>
-                <span className={styles.nombreCampo}>Buscar Libro: </span>
+        <div className={`${combinedStyles.contenedorPrincipalFormulario} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
+            <div className={`${combinedStyles.contenedorBuscarLibro} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
+                <span className={`${combinedStyles.nombreCampo} ${isDarkMode ? combinedStyles.darkMode : ''}`}>Buscar Libro: </span>
                 <InputTexto
                 placeHolder="Buscar libro"
                 ></InputTexto>
@@ -457,7 +504,7 @@ function FormularioActualizarLibro()
             </div>
             <img src={pdf}></img>
             <BotonEstandarImagen nombre="Cargar PDF" conSombra={false} children={<Upload size={24} color="#FFFFFF" />}></BotonEstandarImagen>
-            <div className={styles.contenedorFormulario}>
+            <div className={`${combinedStyles.contenedorFormulario} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 {formularioActualizarLibro.map((data, index)=>(
                     <CampoTexto
                         key={index}
@@ -467,7 +514,7 @@ function FormularioActualizarLibro()
                     ></CampoTexto>
                 ))}
             </div>
-            <div className={styles.botones}>
+            <div className={`${combinedStyles.botones} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 <BotonEstandar titulo="Actualizar"></BotonEstandar>
                 <BotonEstandarAlternativo titulo="Cancelar"></BotonEstandarAlternativo>
             </div>
@@ -477,17 +524,23 @@ function FormularioActualizarLibro()
 
 function FormularioEliminarLibro()
 {
+
+    const {isDarkMode} = useTheme();
+    const combinedStyles = isDarkMode 
+        ? { ...styles, ...darkStyles }
+        : styles;
+
     return(
-        <div className={styles.contenedorPrincipalFormulario}>
-            <div className={styles.contenedorBuscarLibro}>
-                <span className={styles.nombreCampo}>Buscar Libro: </span>
+        <div className={`${combinedStyles.contenedorPrincipalFormulario} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
+            <div className={`${combinedStyles.contenedorBuscarLibro} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
+                <span className={`${combinedStyles.nombreCampo} ${isDarkMode ? combinedStyles.darkMode : ''}`}>Buscar Libro: </span>
                 <InputTexto
                 placeHolder="Buscar libro"
                 ></InputTexto>
                 <Search cursor={"pointer"} size={40}/>
             </div>
             <img src={imagen2}></img>
-            <div className={styles.contenedorFormulario}>
+            <div className={`${combinedStyles.contenedorFormulario} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 {formularioActualizarLibro.map((data, index)=>(
                     <CampoTexto
                         key={index}
@@ -497,7 +550,7 @@ function FormularioEliminarLibro()
                     ></CampoTexto>
                 ))}
             </div>
-            <div className={styles.botones}>
+            <div className={`${combinedStyles.botones} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 <BotonEstandar titulo="Eliminar"></BotonEstandar>
                 <BotonEstandarAlternativo titulo="Cancelar"></BotonEstandarAlternativo>
             </div>
@@ -507,10 +560,16 @@ function FormularioEliminarLibro()
 
 function CerrarSesion()
 {
+
+    const {isDarkMode} = useTheme();
+    const combinedStyles = isDarkMode 
+        ? { ...styles, ...darkStyles }
+        : styles;
+
     return(
-        <div className={styles.cerrarSesion}>
-            <span className={styles.pregunta}>¿Estás seguro que deseas cerrar sesión?</span>
-            <div className={styles.botones}>
+        <div className={`${combinedStyles.cerrarSesion} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
+            <span className={`${combinedStyles.pregunta} ${isDarkMode ? combinedStyles.darkMode : ''}`}>¿Estás seguro que deseas cerrar sesión?</span>
+            <div className={`${combinedStyles.botones} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 <Link to="/" style={{textDecoration: 'none'}}>
                     <BotonEstandar titulo="Cerrar Sesión"></BotonEstandar>
                 </Link>
@@ -541,9 +600,15 @@ const opciones = [
 
 function Administrador()
 {
+
+    const {isDarkMode} = useTheme();
+    const combinedStyles = isDarkMode 
+        ? { ...styles, ...darkStyles }
+        : styles;
+
     return(
         <>
-            <div className={styles.content}>
+            <div className={`${combinedStyles.content} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 <BarraNavegacion></BarraNavegacion>
                 <FondoPaginas>
                     <BarraLateral opciones={opciones}></BarraLateral>
