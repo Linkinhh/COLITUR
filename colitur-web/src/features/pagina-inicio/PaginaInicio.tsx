@@ -1,4 +1,4 @@
-import { BarraNavegacion, Footer, TituloLogoColitur, FondoPaginas, ContenedorConTitulo, CuadroServicio, CuadroNoticia, BotonAccesibilidad } from "../../components";
+import { BarraNavegacion, Footer, TituloLogoColitur, FondoPaginas, ContenedorConTitulo, CuadroServicio, CuadroNoticia } from "../../components";
 import styles from "../pagina-inicio/PaginaInicio.module.css";
 import consultarHabilitados from "../../assets/Consultar_Habilitados.svg";
 import eventosAcademicos from "../../assets/Eventos_Academicos.svg";
@@ -13,7 +13,6 @@ import convenio2 from "../../assets/PromPeru.svg";
 import convenio3 from "../../assets/MinPeru.svg";
 import convenio4 from "../../assets/Dicetur.svg";
 import fondo from "../../assets/Inicio.svg";
-//import { Link } from 'react-router-dom';
 
 const datos =
     [
@@ -98,15 +97,15 @@ function ImagenConvenio({ imagen }: Props) {
 // Son 54px de espacio horizontal entre cosa y cosa
 
 function PaginaInicio() {
-
+    
     return (
         <>
             
-            <div className={styles.content}>
+            <div className={styles.content} >
                 <BarraNavegacion></BarraNavegacion>
                 <TituloLogoColitur titulo="Creado por Ley N° 24915 y actualizado por Ley N° 31172" imagen={fondo}></TituloLogoColitur>
                 <FondoPaginas>
-                    <ContenedorConTitulo titulo="Servicios">
+                    <ContenedorConTitulo titulo="Servicios" >
                         <div className={styles.contenedorServicios}>
                             {datos.map((data, index) => (
                                 <CuadroServicio
