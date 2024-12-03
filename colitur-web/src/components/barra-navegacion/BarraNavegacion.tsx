@@ -8,6 +8,8 @@ import {CircleUserRound} from 'lucide-react';
 import { CircleDollarSign, Handshake, LibraryBig, ScrollText, Search, Menu, X} from 'lucide-react';
 import OpcioneesServicios from '../opcriones-servicios/OpcionesServicios';
 import { useState } from 'react';
+import { useTheme } from '../../context/ThemeContext';
+import darkStyles from './BarraNavegacionDark.module.css';
 
 const servicios = [
     {
@@ -53,10 +55,14 @@ onClick={toggleMenu}
 aria-label={menuAbierto ? "Cerrar menú" : "Abrir menú"}>
 {menuAbierto ? <X size={32} /> : <Menu size={32} />}
 </button>
-*/    
+*/        const {isDarkMode} = useTheme();
+    const combinedStyles = isDarkMode 
+        ? { ...styles, ...darkStyles }
+        : styles;
+
     return (
         <>
-        <section className={styles.container}>
+        <section className={`${combinedStyles.container} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
             <div className={styles.contenedorHamburguesa}>
                 {/* Botón de menú hamburguesa */}
                 <div className={styles.logoMenuHamburguesa}>
@@ -110,7 +116,7 @@ aria-label={menuAbierto ? "Cerrar menú" : "Abrir menú"}>
 
                 )}
             </div>
-            <div className={styles.fijo}>
+            <div className={`${combinedStyles.fijo} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 <Link to="/" style={{textDecoration: 'none'}}>
                     <BotonImagen></BotonImagen>
                 </Link>
@@ -120,13 +126,13 @@ aria-label={menuAbierto ? "Cerrar menú" : "Abrir menú"}>
                 </Link>
 
                 <div 
-                    className={styles.contendorServicios} 
+                    className={`${combinedStyles.contendorServicios} ${isDarkMode ? combinedStyles.darkMode : ''}`} 
                     onMouseEnter={() => setMostrarOpciones(true)} 
                     onMouseLeave={() => setMostrarOpciones(false)}
                 >
                     <BotonNavegacion>Servicios</BotonNavegacion>
                     {mostrarOpciones && (
-                        <div className={styles.servicioDesplegable}>
+                        <div className={`${combinedStyles.servicioDesplegable} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                             {servicios.map((data, index) => (
                                 <OpcioneesServicios
                                     key={index}

@@ -41,6 +41,10 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
+}
+
+.accesibilidad {
+    position: fixed;
+    right: 0;
+    top: 20%;
 }

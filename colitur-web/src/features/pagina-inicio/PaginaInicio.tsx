@@ -1,4 +1,4 @@
-import { BarraNavegacion, Footer, TituloLogoColitur, FondoPaginas, ContenedorConTitulo, CuadroServicio, CuadroNoticia } from "../../components";
+import { BarraNavegacion, Footer, TituloLogoColitur, FondoPaginas, ContenedorConTitulo, CuadroServicio, CuadroNoticia, BotonAccesibilidad } from "../../components";
 import styles from "../pagina-inicio/PaginaInicio.module.css";
 import consultarHabilitados from "../../assets/Consultar_Habilitados.svg";
 import eventosAcademicos from "../../assets/Eventos_Academicos.svg";
@@ -105,6 +105,9 @@ function PaginaInicio() {
             <div className={styles.content}>
                 <BarraNavegacion></BarraNavegacion>
                 <TituloLogoColitur titulo="Creado por Ley N° 24915 y actualizado por Ley N° 31172" imagen={fondo}></TituloLogoColitur>
+                <div className={styles.accesibilidad}>
+                    <BotonAccesibilidad></BotonAccesibilidad>
+                </div>
                 <FondoPaginas>
                     <ContenedorConTitulo titulo="Servicios">
                         <div className={styles.contenedorServicios}>

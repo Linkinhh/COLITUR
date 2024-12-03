@@ -38,7 +38,7 @@
     top:60px; /* Ajusta según la altura de tu barra de navegación */
     left: 20px; /* O ajusta según la posición exacta que quieras */
     width: 100%; /* Ocupa todo el ancho */
-    background-color: white;
+    background-color: var(--white-color);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     z-index: 1000; /* Asegura que esté por encima de otros elementos */
     display: none;

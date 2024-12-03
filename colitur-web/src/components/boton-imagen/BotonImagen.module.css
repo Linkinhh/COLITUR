@@ -1,7 +1,7 @@
 .boton
 {
     padding: 0;
-    background-color: white;
+    background-color: var(--white-color);
     border: none;
     border-radius: 100px;
     &:hover{
