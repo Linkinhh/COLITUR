@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
 import styles from './FondoPaginas.module.css';
+import darkStyles from './FondoPaginasDark.module.css';
+import { useTheme } from '../../context/ThemeContext';
 
 interface Props{
     children: ReactNode;
@@ -7,8 +9,14 @@ interface Props{
 
 function FondoPaginas({children}: Props)
 {
+
+    const {isDarkMode} = useTheme();
+    const combinedStyles = isDarkMode 
+        ? { ...styles, ...darkStyles }
+        : styles;
+
     return(
-        <section className={styles.contenedor}>{children}</section>
+        <section className={`${combinedStyles.contenedor} ${isDarkMode ? combinedStyles.darkMode : ''}`}>{children}</section>
     )
 }
 

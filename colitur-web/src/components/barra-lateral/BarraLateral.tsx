@@ -1,6 +1,8 @@
 import React, {useState } from 'react';
 import styles from './BarraLateral.module.css';
 import imagen from '../../assets/imagen_administrador.svg';
+import darkStyles from './BarraLateralDark.module.css';
+import { useTheme } from '../../context/ThemeContext';
 
 interface Secciones
 {
@@ -18,32 +20,37 @@ interface BarraLateralProps
 
 const BarraLateral: React.FC<BarraLateralProps> = ({opciones}) => {
 
+    const {isDarkMode} = useTheme();
+    const combinedStyles = isDarkMode 
+        ? { ...styles, ...darkStyles }
+        : styles;
+
     const[activeSection, setActiveSection] = useState<string | null> (null);
     //const[isCollapsed, SetIsCollapsed] = useState(false);
 
     return(
-        <div className={styles.contenedorPrincipal}>
-            <aside className={styles.contenedorBarraLateral}>
+        <div className={`${combinedStyles.contenedorPrincipal} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
+            <aside className={`${combinedStyles.contenedorBarraLateral} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 <nav>
-                    <img src={imagen} className={styles.imagen}></img>
-                    <span className={styles.administrador}>Administrador</span>
+                    <img src={imagen} className={`${combinedStyles.imagen} ${isDarkMode ? combinedStyles.darkMode : ''}`}></img>
+                    <span className={`${combinedStyles.administrador} ${isDarkMode ? combinedStyles.darkMode : ''}`}>Administrador</span>
                     {opciones.map((opcion)=> (
                         <button
                         key={opcion.id}
                         onClick={() => setActiveSection (activeSection === opcion.id ? opcion.id : opcion.id)}
-                        className={`${styles.contenedorBoton} ${activeSection === opcion.id ? styles.contenedorBotonActivo : ''}`}>
+                        className={`${combinedStyles.contenedorBoton} ${activeSection === opcion.id ? combinedStyles.contenedorBotonActivo : ''} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                             {opcion.icono}
-                            <span className={styles.titulo}>{opcion.titulo}</span>
+                            <span className={`${combinedStyles.titulo} ${isDarkMode ? combinedStyles.darkMode : ''}`}>{opcion.titulo}</span>
                         </button>
                     ))}
                 </nav>
             </aside>
 
-            <div className={styles.contenedorContenido}>
+            <div className={`${combinedStyles.contenedorContenido} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 {opciones.map((opcion) => activeSection === opcion.id && (
                     <>
-                        <span className={styles.tituloSeccion}>{opcion.tituloSeccion}</span>
-                        <div key = {opcion.id} className={styles.contenedorContenidoSecundario}>
+                        <span className={`${combinedStyles.tituloSeccion} ${isDarkMode ? combinedStyles.darkMode : ''}`}>{opcion.tituloSeccion}</span>
+                        <div key = {opcion.id} className={`${combinedStyles.contenedorContenidoSecundario} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                             {opcion.children}
                         </div>
                     </>

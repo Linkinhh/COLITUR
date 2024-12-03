@@ -6,6 +6,9 @@ import imagen from "../../assets/datos_personales_administrador.jpg";
 import imagen2 from "../../assets/subir_publicaciones_administrador.jpg";
 import pdf from "../../assets/PDF.png";
 import { Link } from "react-router-dom";
+import darkStyles from './AdministradorDark.module.css';
+import { useTheme } from "../../context/ThemeContext";
+
 interface CampoTextoProps
 {
     nombre: string;
@@ -16,9 +19,15 @@ interface CampoTextoProps
 
 function CampoTexto({nombre, place, detalle, tipo="text"}: CampoTextoProps)
 {
+
+    const {isDarkMode} = useTheme();
+    const combinedStyles = isDarkMode 
+        ? { ...styles, ...darkStyles }
+        : styles;
+
     return(
         <div className={styles.contenedorNombreCampo}>
-            <span className={styles.nombreCampo}>{nombre}</span>
+            <span className={`${combinedStyles.nombreCampo} ${isDarkMode ? combinedStyles.darkMode : ''}`}>{nombre}</span>
             <InputTexto placeHolder={place} detalle={detalle} tipo={tipo} mostrarAyuda={true}></InputTexto>
         </div>
     );
@@ -446,10 +455,16 @@ const formularioActualizarLibro = [
 
 function FormularioActualizarLibro()
 {
+
+    const {isDarkMode} = useTheme();
+    const combinedStyles = isDarkMode 
+        ? { ...styles, ...darkStyles }
+        : styles;
+
     return(
         <div className={styles.contenedorPrincipalFormulario}>
             <div className={styles.contenedorBuscarLibro}>
-                <span className={styles.nombreCampo}>Buscar Libro: </span>
+                <span className={`${combinedStyles.nombreCampo} ${isDarkMode ? combinedStyles.darkMode : ''}`}>Buscar Libro: </span>
                 <InputTexto
                 placeHolder="Buscar libro"
                 ></InputTexto>
@@ -477,10 +492,16 @@ function FormularioActualizarLibro()
 
 function FormularioEliminarLibro()
 {
+
+    const {isDarkMode} = useTheme();
+    const combinedStyles = isDarkMode 
+        ? { ...styles, ...darkStyles }
+        : styles;
+
     return(
         <div className={styles.contenedorPrincipalFormulario}>
             <div className={styles.contenedorBuscarLibro}>
-                <span className={styles.nombreCampo}>Buscar Libro: </span>
+                <span className={`${combinedStyles.nombreCampo} ${isDarkMode ? combinedStyles.darkMode : ''}`}>Buscar Libro: </span>
                 <InputTexto
                 placeHolder="Buscar libro"
                 ></InputTexto>
@@ -507,9 +528,15 @@ function FormularioEliminarLibro()
 
 function CerrarSesion()
 {
+
+    const {isDarkMode} = useTheme();
+    const combinedStyles = isDarkMode 
+        ? { ...styles, ...darkStyles }
+        : styles;
+
     return(
         <div className={styles.cerrarSesion}>
-            <span className={styles.pregunta}>¿Estás seguro que deseas cerrar sesión?</span>
+            <span className={`${combinedStyles.pregunta} ${isDarkMode ? combinedStyles.darkMode : ''}`}>¿Estás seguro que deseas cerrar sesión?</span>
             <div className={styles.botones}>
                 <Link to="/" style={{textDecoration: 'none'}}>
                     <BotonEstandar titulo="Cerrar Sesión"></BotonEstandar>

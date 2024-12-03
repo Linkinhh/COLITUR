@@ -1,6 +1,8 @@
 import styles from "./OpcionesServicios.module.css"
 import { Link } from 'react-router-dom';
 import { LucideIcon } from 'lucide-react';
+import darkStyles from './OpcionesServiciosDark.module.css';
+import { useTheme } from "../../context/ThemeContext";
 
 interface Props {
     imagen: LucideIcon
@@ -11,11 +13,18 @@ interface Props {
 
 
 function OpcioneesServicios ({imagen: Imagen, servicio, ruta}: Props){
+
+    const {isDarkMode} = useTheme();
+    const combinedStyles = isDarkMode 
+        ? { ...styles, ...darkStyles }
+        : styles;
+
+
     return (
-        <Link to={ruta} className={styles.enlace}>
-            <div className={styles.contenedor}>
-            <Imagen className={styles.imagen}></Imagen>
-            <span className={styles.texto}>{servicio}</span>
+        <Link to={ruta} className={`${combinedStyles.enlace} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
+            <div className={`${combinedStyles.contenedor} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
+            <Imagen className={`${combinedStyles.imagen} ${isDarkMode ? combinedStyles.darkMode : ''}`}></Imagen>
+            <span className={`${combinedStyles.texto} ${isDarkMode ? combinedStyles.darkMode : ''}`}>{servicio}</span>
         </div>
         </Link>
     )

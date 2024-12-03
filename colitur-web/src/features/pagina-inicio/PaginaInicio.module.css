@@ -29,16 +29,21 @@
     margin-bottom: 54px;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .contenedorConvenios
 {
     width: 95%;
+    background-color: white;
     margin-top: 54px;
     margin-bottom: 54px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .accesibilidad {

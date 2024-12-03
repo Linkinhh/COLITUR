@@ -47,3 +47,59 @@
 .contendorServicios:hover .servicioDesplegable {
     display: block;
 }
+
+/* Estilos para el botón hamburguesa */
+.botonHamburguesa {
+    display: none; /* Oculto por defecto */
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.contenedorHamburguesa
+{
+    display: none;
+}
+
+.logoMenuHamburguesa
+{
+    display: none;
+}
+
+/* Media Query para convertir en menú hamburguesa */
+@media screen and (max-width: 993px) {
+    .fijo
+    {
+        display: none;
+    }
+    .fondoBarra, .logoMenuHamburguesa, .botonHamburguesa
+    {
+        display: inline;
+    }
+
+    .contenedorHamburguesa
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        width: 100vw;
+        background-color: var(--white-color);
+        z-index: 1000;
+        top: 0;
+        left: 0;
+    }
+
+    .desplegableHamburguesa
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 100%;
+        border-top: solid 5px var(--bone-color);
+        background-color: var(--white-color);
+        width: 100%;
+    }
+}

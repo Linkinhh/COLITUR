@@ -84,3 +84,12 @@
     flex-direction: column;
     margin-bottom: 90px;
 }
+
+/*
+@media screen and (max-width: 993px) {
+    .contenedorGrande
+    {
+        flex-wrap: wrap;
+    }
+}
+*/
