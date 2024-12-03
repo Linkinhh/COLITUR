@@ -155,7 +155,7 @@ aria-label={menuAbierto ? "Cerrar menú" : "Abrir menú"}>
                 <Link to="/Normativa" style={{textDecoration: 'none'}}>
                     <BotonNavegacion>Normativa</BotonNavegacion>
                 </Link>
-                <Link to="/IniciarSesion" style={{textDecoration: 'none'}}>
+                <Link to="/IniciarSesion" style={{textDecoration: 'none'}} tabIndex={-1}>
                     <BotonEstandarImagen nombre='Iniciar Sesion' conSombra = {true} children={<CircleUserRound size={48} strokeWidth={0.5}/>}></BotonEstandarImagen>
                 </Link>
             </div>

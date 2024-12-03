@@ -64,6 +64,14 @@
     cursor: pointer;
 }
 
+.contenedor:focus,
+.contenedorImagen:focus,
+.contenedorFecha:focus {
+    outline: 2px solid #0078d4; /* Resalta con un borde visible */
+    outline-offset: 2px;
+}
+
+
 @media screen and (max-width: 480px){
     .contenedorImagen
     {

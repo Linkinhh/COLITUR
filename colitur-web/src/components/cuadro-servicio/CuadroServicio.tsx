@@ -20,15 +20,15 @@ function CuadroServicio({imagen, titulo, descripcion, ruta}: Props)
 
     return(
         <section 
-            className={`${combinedStyles.contenedor} ${isDarkMode ? combinedStyles.darkMode : ''}`}
+            className={`${combinedStyles.contenedor} ${isDarkMode ? combinedStyles.darkMode : ''}`} tabIndex={-1} 
             style={{backgroundImage: `url(${imagen})`} as React.CSSProperties}
             aria-label="Imagen representativa del servicio.">
             
-            <span className={`${combinedStyles.titulo} ${isDarkMode ? combinedStyles.darkMode : ''}`}>{titulo}</span>
-            <div className={`${combinedStyles.efecto} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
+            <span className={`${combinedStyles.titulo} ${isDarkMode ? combinedStyles.darkMode : ''}`} tabIndex={-1}>{titulo}</span>
+            <div className={`${combinedStyles.efecto} ${isDarkMode ? combinedStyles.darkMode : ''}`} tabIndex={-1}>
                     <p className={`${combinedStyles.descripcion} ${isDarkMode ? combinedStyles.darkMode : ''}`}>{descripcion}</p>
                     <Link to={ruta} style={{textDecoration: 'none'}}>
-                        <button className={`${combinedStyles.boton} ${isDarkMode ? combinedStyles.darkMode : ''}`}>Ver Servicio</button>
+                        <button className={`${combinedStyles.boton} ${isDarkMode ? combinedStyles.darkMode : ''}`} tabIndex={-1}>Ver Servicio</button>
                     </Link>
             </div>
         </section>

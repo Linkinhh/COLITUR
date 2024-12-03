@@ -16,7 +16,7 @@ function BotonNavegacion( { children }: Props )
         : styles;
 
     return(
-        <button className={`${combinedStyles.botonNavegacion} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
+        <button className={`${combinedStyles.botonNavegacion} ${isDarkMode ? combinedStyles.darkMode : ''}`}  tabIndex={-1}>
             {children}
         </button>
     )

@@ -74,3 +74,15 @@
 .imagenLupaMenos {
     color: var(--white-color);
 }
+
+/* Cuando el botón tiene focus, simula el hover */
+.content.focusHover .contenedor {
+    opacity: 0; /* Igual que en hover */
+    pointer-events: none;
+}
+
+.content.focusHover .contenedorHover {
+    opacity: 1; /* Igual que en hover */
+    pointer-events: auto;
+}
+
