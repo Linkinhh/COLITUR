@@ -23,7 +23,7 @@ function OpcioneesServicios ({imagen: Imagen, servicio, ruta}: Props){
     return (
         <Link to={ruta} className={`${combinedStyles.enlace} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
             <div className={`${combinedStyles.contenedor} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
-            <Imagen className={`${combinedStyles.imagen} ${isDarkMode ? combinedStyles.darkMode : ''}`}></Imagen>
+            <Imagen aria-label="Icono representatito del servicio." className={`${combinedStyles.imagen} ${isDarkMode ? combinedStyles.darkMode : ''}`}></Imagen>
             <span className={`${combinedStyles.texto} ${isDarkMode ? combinedStyles.darkMode : ''}`}>{servicio}</span>
         </div>
         </Link>

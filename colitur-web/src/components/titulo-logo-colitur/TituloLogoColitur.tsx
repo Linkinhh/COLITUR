@@ -10,7 +10,7 @@ interface Props
 function TituloLogoColitur({titulo, imagen}: Props)
 {
     return(
-        <section style={{"--imagen-fondo": `url(${imagen})`} as React.CSSProperties} className={styles.contenedor}>
+        <section aria-label="Imagen Representativa de la Pagina que se Visualiza" style={{"--imagen-fondo": `url(${imagen})`} as React.CSSProperties} className={styles.contenedor}>
             <LogoColitur></LogoColitur>
             <span className={styles.titulo}>{titulo}</span>
         </section>
