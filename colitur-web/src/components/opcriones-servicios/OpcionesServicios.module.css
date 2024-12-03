@@ -1,0 +1,41 @@
+@import "../../App.css";
+
+.enlace {
+    text-decoration: none;
+}
+
+.contenedor {
+    width: 260px;
+    height: 45px;
+    background-color: var(--white-color);
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: left;
+    color: var(--lightblue-color); 
+    text-decoration: none;
+}
+
+.contenedor:hover {
+    background-color: var(--lightblue-color);
+    color: var(--white-color);
+}
+
+.contenedor:hover .texto {
+    color: var(--white-color);
+}
+
+.imagen {
+    width: 25px;
+    height: 25px;
+    padding-inline: 5px;
+}
+
+.texto {
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--lightblue-color); 
+}
+

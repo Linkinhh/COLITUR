@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 //import { useState } from 'react';
 import './App.css';
-import {PaginaColegiatura, PaginaInicio, PaginaNormativa, IniciarSesion, Administrador, PaginaNosotros, ServicioHabilitados} from './features/index';
+import {PaginaColegiatura, PaginaInicio, PaginaNormativa, IniciarSesion, Administrador, PaginaNosotros, ServicioHabilitados, ServicioEventos, ServicioBiblioteca, ServicioConvenios} from './features/index';
 
 // CORREGIR ESTILOS DE NORMATIVA
 
@@ -43,6 +43,9 @@ function App() {
         <Route path='/IniciarSesion' element={<IniciarSesion></IniciarSesion>}></Route>
         <Route path='/IniciarSesion/Administrador' element={<Administrador></Administrador>}></Route>
         <Route path='/ServicioHabilitados' element={<ServicioHabilitados></ServicioHabilitados>}></Route>
+        <Route path='/ServicioEventos' element={<ServicioEventos></ServicioEventos>}></Route>
+        <Route path='/ServicioBiblioteca' element={<ServicioBiblioteca></ServicioBiblioteca>}></Route>
+        <Route path='/ServicioConvenios' element={<ServicioConvenios></ServicioConvenios>}></Route>
         <Route path="*" element={<div>Página no encontrada</div>} />
       </Routes>
     </Router>
