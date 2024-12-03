@@ -75,7 +75,7 @@ function PaginaNosotros ()
         <>
             <div className={styles.content}>
                 <div className={styles.barraNavegacion}><BarraNavegacion></BarraNavegacion></div>
-                <TituloLogoColitur titulo={"Nosotros"} imagen={portada}></TituloLogoColitur>
+                <TituloLogoColitur titulo={"NOSOTROS"} imagen={portada}></TituloLogoColitur>
                 <FondoPaginas>
                     <ContenedorConTitulo titulo={'Historia'}>
                         <div className={styles.contenedor}>

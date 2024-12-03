@@ -29,6 +29,8 @@
     margin-bottom: 54px;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .contenedorConvenios
@@ -39,4 +41,6 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
