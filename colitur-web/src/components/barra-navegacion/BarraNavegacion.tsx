@@ -8,6 +8,8 @@ import {CircleUserRound} from 'lucide-react';
 import { CircleDollarSign, Handshake, LibraryBig, ScrollText, Search} from 'lucide-react';
 import OpcioneesServicios from '../opcriones-servicios/OpcionesServicios';
 import { useState } from 'react';
+import { useTheme } from '../../context/ThemeContext';
+import darkStyles from './BarraNavegacionDark.module.css';
 
 const servicios = [
     {
@@ -40,12 +42,16 @@ const servicios = [
 function BarraNavegacion()
 {
     const [mostrarOpciones, setMostrarOpciones] = useState(false);
+    const {isDarkMode} = useTheme();
+    const combinedStyles = isDarkMode 
+        ? { ...styles, ...darkStyles }
+        : styles;
 
     return (
         <>
-        <section className={styles.container}>
+        <section className={`${combinedStyles.container} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
             
-            <div className={styles.fijo}>
+            <div className={`${combinedStyles.fijo} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 <Link to="/" style={{textDecoration: 'none'}}>
                     <BotonImagen></BotonImagen>
                 </Link>
@@ -55,13 +61,13 @@ function BarraNavegacion()
                 </Link>
 
                 <div 
-                    className={styles.contendorServicios} 
+                    className={`${combinedStyles.contendorServicios} ${isDarkMode ? combinedStyles.darkMode : ''}`} 
                     onMouseEnter={() => setMostrarOpciones(true)} 
                     onMouseLeave={() => setMostrarOpciones(false)}
                 >
                     <BotonNavegacion>Servicios</BotonNavegacion>
                     {mostrarOpciones && (
-                        <div className={styles.servicioDesplegable}>
+                        <div className={`${combinedStyles.servicioDesplegable} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                             {servicios.map((data, index) => (
                                 <OpcioneesServicios
                                     key={index}
