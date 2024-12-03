@@ -2,7 +2,7 @@ import styles from "./Administrador.module.css";
 import { BarraLateral, BarraNavegacion, FondoPaginas, Footer, TabWidget, InputTexto, BotonEstandarImagen, BotonEstandar, BotonEstandarAlternativo, Tabla } from "../../components";
 //import Tab from "../../components/tab-widget/TabWidget";
 import {CircleUser, LockKeyhole, UserPlus, CreditCard, Newspaper, BookText, LogOut, Upload, BookPlus, BookCheck, BookX, Search} from "lucide-react";
-import imagen from "../../assets/datos_personales_administrador.jpg";
+import imagen from "../../assets/datos_personales_administrador.png";
 import imagen2 from "../../assets/subir_publicaciones_administrador.jpg";
 import pdf from "../../assets/PDF.png";
 import { Link } from "react-router-dom";
@@ -94,7 +94,7 @@ function FormularioDatosPersonales ()
     return(
         
         <div className={styles.contenedorPrincipalFormulario}>
-            <img src={imagen}></img>
+            <img className={styles.imagen} src={imagen}></img>
             <BotonEstandarImagen nombre="Cargar Imagen" conSombra={false} children={<Upload size={24} color="#FFFFFF" />}></BotonEstandarImagen>
             <div className={styles.contenedorFormulario}>
                 {formularioDatosPersonales.map((data, index)=>(
@@ -188,7 +188,7 @@ function FormularioRegistrarColegiado ()
     return(
         
         <div className={styles.contenedorPrincipalFormulario}>
-            <img src={imagen}></img>
+            <img className={styles.imagen} src={imagen}></img>
             <BotonEstandarImagen nombre="Cargar Imagen" conSombra={false} children={<Upload size={24} color="#FFFFFF" />}></BotonEstandarImagen>
             <div className={styles.contenedorFormulario}>
                 {formularioRegistrarColegiado.map((data, index)=>(

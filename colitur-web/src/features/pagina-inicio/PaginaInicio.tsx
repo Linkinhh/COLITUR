@@ -105,9 +105,6 @@ function PaginaInicio() {
             <div className={styles.content}>
                 <BarraNavegacion></BarraNavegacion>
                 <TituloLogoColitur titulo="Creado por Ley N° 24915 y actualizado por Ley N° 31172" imagen={fondo}></TituloLogoColitur>
-                <div className={styles.accesibilidad}>
-                    <BotonAccesibilidad></BotonAccesibilidad>
-                </div>
                 <FondoPaginas>
                     <ContenedorConTitulo titulo="Servicios">
                         <div className={styles.contenedorServicios}>

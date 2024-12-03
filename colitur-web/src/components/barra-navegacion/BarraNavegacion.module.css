@@ -67,6 +67,13 @@
     display: none;
 }
 
+.accesibilidad {
+    position: fixed;
+    right: 0;
+    top: 30%;
+    z-index: 1000;
+}
+
 /* Media Query para convertir en menú hamburguesa */
 @media screen and (max-width: 993px) {
     .fijo

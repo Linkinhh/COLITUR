@@ -1,7 +1,7 @@
 import styles from './PaginaNosotros.module.css';
 import { BarraNavegacion, FondoPaginas, Footer, TituloLogoColitur, ContenedorConTitulo, FotoLicenciado} from '../../components';
 import portada from '../../assets/Nosotros.jpg';
-import licenciado from '../../assets/datos_personales_administrador.jpg';
+import licenciado from '../../assets/datos_personales_administrador.png';
 import darkStyles from './PaginaNosotrosDark.module.css';
 import { useTheme } from '../../context/ThemeContext';
 

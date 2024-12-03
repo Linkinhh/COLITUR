@@ -10,6 +10,7 @@ import OpcioneesServicios from '../opcriones-servicios/OpcionesServicios';
 import { useState } from 'react';
 import { useTheme } from '../../context/ThemeContext';
 import darkStyles from './BarraNavegacionDark.module.css';
+import BotonAccesibilidad from '../boton-accesibilidad/BotonAccesibilidad';
 
 const servicios = [
     {
@@ -63,6 +64,9 @@ aria-label={menuAbierto ? "Cerrar menú" : "Abrir menú"}>
     return (
         <>
         <section className={`${combinedStyles.container} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
+            <div className={`${combinedStyles.accesibilidad} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
+                <BotonAccesibilidad></BotonAccesibilidad>
+            </div>
             <div className={styles.contenedorHamburguesa}>
                 {/* Botón de menú hamburguesa */}
                 <div className={styles.logoMenuHamburguesa}>
