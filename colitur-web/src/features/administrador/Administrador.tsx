@@ -216,7 +216,7 @@ function FormularioCambiarContraseña()
             <div className={styles.contenedorFormulario}>
                 <CampoTexto
                 nombre="Contraseña Actual"
-                place="Debe coincidir con la contraseña que declaró al crear su cuenta"
+                place="Digite la contraseña actual"
                 tipo="password"></CampoTexto>
                 <CampoTexto
                 nombre="Nueva Contraseña"
@@ -224,7 +224,7 @@ function FormularioCambiarContraseña()
                 tipo="password"></CampoTexto>
                 <CampoTexto
                 nombre="Reingresar contraseña"
-                place="Debe coincidir con la contraseña que acaba de digitar"
+                place="Debe coincidir con la contraseña anterior"
                 tipo="password"></CampoTexto>
             </div>
             <div className={styles.botones}>

@@ -8,8 +8,8 @@
 }
 
 .contenedorImagen{
-    width: 458px;
-    height: 456px;
+    width: 28.5rem;
+    height: 28.5rem;
     position: relative;
     overflow: hidden;
     background-size: cover;
@@ -62,4 +62,12 @@
 .contenedorImagen:hover
 {
     cursor: pointer;
+}
+
+@media screen and (max-width: 480px){
+    .contenedorImagen
+    {
+        width: 20rem;
+        height: 20rem;
+    }
 }

@@ -33,16 +33,12 @@ html, body {
     min-width: 200px; /* Asegura un ancho mínimo para el label */
     white-space: nowrap;
 }
-/*
-remover algún atributo
-implementar redes neuronales
-PCA
-*/
 
 .nombreCampo
 {
     font-family: 'Inter', sans-serif;
     font-size: 1.2rem;
+    min-width: 240px;
     width: 30%;
 }
 
@@ -92,6 +88,14 @@ PCA
 .botones > *
 {
     width: 15rem;
+}
+
+@media screen and (max-width: 1280px) {
+    .contenedorNombreCampo
+    {
+        flex-direction: column;
+        align-items: start;
+    }
 }
 
 .imagen {

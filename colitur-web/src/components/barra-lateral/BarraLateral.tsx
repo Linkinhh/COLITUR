@@ -31,7 +31,7 @@ const BarraLateral: React.FC<BarraLateralProps> = ({opciones}) => {
     return(
         <div className={`${combinedStyles.contenedorPrincipal} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
             <aside className={`${combinedStyles.contenedorBarraLateral} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
-                <nav>
+                <nav >
                     <img src={imagen} className={`${combinedStyles.imagen} ${isDarkMode ? combinedStyles.darkMode : ''}`}></img>
                     <span className={`${combinedStyles.administrador} ${isDarkMode ? combinedStyles.darkMode : ''}`}>Administrador</span>
                     {opciones.map((opcion)=> (

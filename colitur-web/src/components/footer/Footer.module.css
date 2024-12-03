@@ -9,8 +9,9 @@
     position: relative;
     bottom: 0;
     left: 0;
-    width: 100%;
-    height: 350px;
+    width: 100vw;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 .contenedorGrande::before
 {
@@ -27,8 +28,6 @@
     z-index: -1;
 }
 
-
-
 .imagenIconoTexto
 {
     width: 30px;
@@ -43,14 +42,13 @@
     font-size: 18px;
 }
 
-
-
 .segundaParte
 {
     color: var(--white-color);
     display: flex;
     flex-direction: column;
 }
+
 .subrayado
 {
     text-decoration: underline;
@@ -85,9 +83,28 @@
     margin-bottom: 90px;
 }
 
+@media screen and (max-width: 993px) {
+    .contenedorGrande
+    {
+        flex-wrap: wrap;
+        gap: 80px;
+    }
+
+    .contenedorGrande::before
+    {
+        flex-wrap: wrap;
+    }
+}
+
 /*
 @media screen and (max-width: 993px) {
     .contenedorGrande
+    {
+        flex-wrap: wrap;
+        gap: 80px;
+    }
+
+    .contenedorGrande::before
     {
         flex-wrap: wrap;
     }

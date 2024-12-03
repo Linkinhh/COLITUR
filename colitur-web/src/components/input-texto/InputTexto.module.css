@@ -24,6 +24,7 @@
     border-radius: 4px;
     border: solid black 1px;
     /* Alterar por una variable definida por el desarrollador*/
+    min-width: 420px;
     width: 95%;
     /* Alterar por una variable definida por el desarrollador*/
     padding-right: 50px;

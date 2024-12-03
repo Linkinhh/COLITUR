@@ -44,6 +44,7 @@ PCA
     font-family: 'Inter', sans-serif;
     font-size: 1.2rem;
     width: 30%;
+    min-width: 240px;
     color: white;
 }
 
@@ -94,6 +95,14 @@ PCA
 .botones > *
 {
     width: 15rem;
+}
+
+@media screen and (max-width: 1280px) {
+    .contenedorNombreCampo
+    {
+        flex-direction: column;
+        align-items: start;
+    }
 }
 
 .imagen {

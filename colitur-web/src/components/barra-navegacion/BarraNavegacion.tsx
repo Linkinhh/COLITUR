@@ -67,34 +67,34 @@ aria-label={menuAbierto ? "Cerrar menú" : "Abrir menú"}>
             <div className={`${combinedStyles.accesibilidad} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 <BotonAccesibilidad></BotonAccesibilidad>
             </div>
-            <div className={styles.contenedorHamburguesa}>
+            <div className={`${combinedStyles.contenedorHamburguesa} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 {/* Botón de menú hamburguesa */}
-                <div className={styles.logoMenuHamburguesa}>
+                <div className={`${combinedStyles.logoMenuHamburguesa} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                     <Link to="/" style={{textDecoration: 'none'}}>
                         <BotonImagen></BotonImagen>
                     </Link>
                 </div>
                 <button 
-                className={styles.botonHamburguesa}
+                className={`${combinedStyles.botonHamburguesa} ${isDarkMode ? combinedStyles.darkMode : ''}`}
                 onClick={toggleMenu}
                 aria-label={menuAbierto ? "Cerrar menú" : "Abrir menú"}>
-                {menuAbierto ? <X size={48} /> : <Menu size={48} />}
+                {menuAbierto ? <X size={48} className={`${combinedStyles.iconoHamburguesa} ${isDarkMode ? combinedStyles.darkMode : ''}`} /> : <Menu size={48} className={`${combinedStyles.iconoHamburguesa} ${isDarkMode ? combinedStyles.darkMode : ''}`}/>}
                 </button>
                 {menuAbierto && (
-                    <div className={styles.desplegableHamburguesa}>
+                    <div className={`${combinedStyles.desplegableHamburguesa} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                     
                     <Link to="/Nosotros" style={{textDecoration: 'none'}}>
                     <BotonNavegacion>Nosotros</BotonNavegacion>
                     </Link>
 
                     <div 
-                        className={styles.contendorServicios} 
+                        className={`${combinedStyles.contendorServicios} ${isDarkMode ? combinedStyles.darkMode : ''}`} 
                         onMouseEnter={() => setMostrarOpciones(true)} 
                         onMouseLeave={() => setMostrarOpciones(false)}
                     >
                         <BotonNavegacion>Servicios</BotonNavegacion>
                         {mostrarOpciones && (
-                            <div className={styles.servicioDesplegable}>
+                            <div className={`${combinedStyles.servicioDesplegable} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                                 {servicios.map((data, index) => (
                                     <OpcioneesServicios
                                         key={index}

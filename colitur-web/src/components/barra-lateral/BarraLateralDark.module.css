@@ -41,7 +41,7 @@
 {
     flex: 1;
     padding: 50px;
-    height: 100vw;
+    width: 100%;
 }
 
 .titulo

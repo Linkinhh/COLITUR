@@ -1,4 +1,4 @@
-@import "../../index.css";
+@import "../../App.css";
 
 .container
 {
@@ -46,4 +46,65 @@
 
 .contendorServicios:hover .servicioDesplegable {
     display: block;
+}
+
+/* Estilos para el botón hamburguesa */
+.botonHamburguesa {
+    display: none; /* Oculto por defecto */
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.contenedorHamburguesa
+{
+    display: none;
+}
+
+.logoMenuHamburguesa
+{
+
+    display: none;
+}
+
+.iconoHamburguesa
+{
+    color: white;
+}
+
+@media screen and (max-width: 993px) {
+    .fijo
+    {
+        display: none;
+    }
+    .fondoBarra, .logoMenuHamburguesa, .botonHamburguesa
+    {
+        display: inline;
+    }
+
+    .contenedorHamburguesa
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        width: 100vw;
+        background-color: var(--white-colorDark);
+        z-index: 1000;
+        top: 0;
+        left: 0;
+    }
+
+    .desplegableHamburguesa
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 100%;
+        border-top: solid 5px var(--bone-colorDark);
+        background-color: var(--white-colorDark);
+        width: 100%;
+    }
 }

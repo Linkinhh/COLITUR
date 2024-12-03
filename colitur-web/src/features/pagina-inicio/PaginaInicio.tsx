@@ -20,35 +20,35 @@ const datos =
         {
             imagen: consultarHabilitados,
             titulo: "Consultar Habilitados",
-            descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            descripcion: "En este apartado es posible buscar a los licenciados habilitados actualmente en el colegio",
             // añadir ruta
             ruta: "./ServicioHabilitados"
         },
         {
             imagen: eventosAcademicos,
             titulo: "Eventos Académicos",
-            descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            descripcion: "Informate aquí sobre los eventos académicos organizados por COLITUR",
             // añadir ruta
             ruta: "/ServicioEventos"
         },
         {
             imagen: realizarConvenios,
             titulo: "Realizar Convenios",
-            descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            descripcion: "Si tu negocio o la entidad de la que formas parte está interesada en realizar un convenio, entérate de los requisitos aquí.",
             // añadir ruta
             ruta: "/ServicioConvenios"
         },
         {
             imagen: bibliotecaVirtual,
             titulo: "Biblioteca Virtual",
-            descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            descripcion: "Accede a nuestra nueva biblioteca virtual.",
             // añadir ruta
             ruta: "/ServicioBiblioteca"
         },
         {
             imagen: pagoVirtual,
             titulo: "Medios de Pago",
-            descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            descripcion: "Revisa que métodos de pago son válidos en COLITUR.",
             // añadir ruta
             ruta: "/"
         }
