@@ -83,7 +83,7 @@ function PaginaNosotros ()
         <>
             <div className={`${combinedStyles.content} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 <div className={`${combinedStyles.barraNavegacion} ${isDarkMode ? combinedStyles.darkMode : ''}`}><BarraNavegacion></BarraNavegacion></div>
-                <TituloLogoColitur titulo={"Nosotros"} imagen={portada}></TituloLogoColitur>
+                <TituloLogoColitur titulo={"NOSOTROS"} imagen={portada}></TituloLogoColitur>
                 <FondoPaginas>
                     <ContenedorConTitulo titulo={'Historia'}>
                         <div className={`${combinedStyles.contenedor} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
