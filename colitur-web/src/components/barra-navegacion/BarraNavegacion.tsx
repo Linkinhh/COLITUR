@@ -36,7 +36,7 @@ const servicios = [
     {
         imagen: CircleDollarSign,
         servicio: "Medios de Pago",
-        ruta: "/ServicioHabilitados"
+        ruta: "/ServicioMediosdePago"
     },
 ]
 

@@ -21,7 +21,7 @@ function CuadroNoticia({imagen, fecha}: Props)
             <div 
             className={`${combinedStyles.contenedorImagen} ${isDarkMode ? combinedStyles.darkMode : ''}`}
             style={{backgroundImage: `url(${imagen})`}}>
-                <div className={`${combinedStyles.contenedorFecha} ${isDarkMode ? combinedStyles.darkMode : ''}`}>{fecha}</div>
+                <div className={`${combinedStyles.contenedorFecha} ${isDarkMode ? combinedStyles.darkMode : ''}`} aria-label="Imagen de fondo de una noticia">{fecha}</div>
             </div>
             <div className={`${combinedStyles.separador} ${isDarkMode ? combinedStyles.darkMode : ''}`}></div>
         </section>

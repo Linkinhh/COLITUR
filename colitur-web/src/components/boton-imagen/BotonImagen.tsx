@@ -13,7 +13,7 @@ function BotonImagen()
 
     return(
         <button className={`${combinedStyles.boton} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
-            <img src={imagen} className={`${combinedStyles.imagen} ${isDarkMode ? combinedStyles.darkMode : ''}`}></img>
+            <img alt='Logo del Colegio de Licenciados en Turismo de Ancash' src={imagen} className={`${combinedStyles.imagen} ${isDarkMode ? combinedStyles.darkMode : ''}`}></img>
         </button>
     )
 }

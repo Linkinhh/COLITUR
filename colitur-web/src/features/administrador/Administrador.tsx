@@ -1,7 +1,7 @@
 import styles from "./Administrador.module.css";
 import { BarraLateral, BarraNavegacion, FondoPaginas, Footer, TabWidget, InputTexto, BotonEstandarImagen, BotonEstandar, BotonEstandarAlternativo, Tabla } from "../../components";
 //import Tab from "../../components/tab-widget/TabWidget";
-import {CircleUser, LockKeyhole, UserPlus, CreditCard, Newspaper, BookText, LogOut, Upload, BookPlus, BookCheck, BookX, Search} from "lucide-react";
+import {CircleUser, LockKeyhole, UserPlus, CreditCard, Newspaper, BookText, LogOut, Upload, BookPlus, BookCheck, BookX, Search, BookImage} from "lucide-react";
 import imagen from "../../assets/datos_personales_administrador.png";
 import imagen2 from "../../assets/subir_publicaciones_administrador.jpg";
 import pdf from "../../assets/PDF.png";
@@ -283,10 +283,16 @@ const formularioSubirPublicaciones = [
 
 function FormularioSubirPublicaciones ()
 {
+
+    const {isDarkMode} = useTheme();
+    const combinedStyles = isDarkMode 
+        ? { ...styles, ...darkStyles }
+        : styles;
+
     return(
         
         <div className={styles.contenedorPrincipalFormulario}>
-            <img src={imagen2}></img>
+            <BookImage className={`${combinedStyles.iconoLibro} ${isDarkMode ? combinedStyles.darkMode : ''}`}></BookImage>
             <BotonEstandarImagen nombre="Cargar Imagen" conSombra={false} children={<Upload size={24} color="#FFFFFF" />}></BotonEstandarImagen>
             <div className={styles.contenedorFormulario}>
                 {formularioSubirPublicaciones.map((data, index)=>(
@@ -507,7 +513,7 @@ function FormularioEliminarLibro()
                 ></InputTexto>
                 <Search cursor={"pointer"} size={40}/>
             </div>
-            <img src={imagen2}></img>
+            <BookImage className={`${combinedStyles.iconoLibro} ${isDarkMode ? combinedStyles.darkMode : ''}`}></BookImage>
             <div className={styles.contenedorFormulario}>
                 {formularioActualizarLibro.map((data, index)=>(
                     <CampoTexto

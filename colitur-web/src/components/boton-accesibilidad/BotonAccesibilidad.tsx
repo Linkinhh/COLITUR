@@ -16,16 +16,16 @@ function BotonAccesibilidad () {
     return (
         <section className={`${combinedStyles.content} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
             <div className={`${combinedStyles.contenedor} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
-                <PersonStanding className={`${combinedStyles.imagenAccesibilidad} ${isDarkMode ? combinedStyles.darkMode : ''}`}></PersonStanding>
+                <PersonStanding aria-label='Persona abierta de brazos y piernas.' className={`${combinedStyles.imagenAccesibilidad} ${isDarkMode ? combinedStyles.darkMode : ''}`}></PersonStanding>
             </div>
             <div>
                 <div className={`${combinedStyles.contenedorHover} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
-                    <button className={`${combinedStyles.botonLupaMas} ${isDarkMode ? combinedStyles.darkMode : ''}`}><ZoomIn className={`${combinedStyles.imagenLupaMas} ${isDarkMode ? combinedStyles.darkMode : ''}`}></ZoomIn></button>
+                    <button className={`${combinedStyles.botonLupaMas} ${isDarkMode ? combinedStyles.darkMode : ''}`}><ZoomIn aria-label='Lupa con un simbolo de + dentro' className={`${combinedStyles.imagenLupaMas} ${isDarkMode ? combinedStyles.darkMode : ''}`}></ZoomIn></button>
                     <button 
                         className={`${combinedStyles.botonDarkMode} ${isDarkMode ? combinedStyles.darkMode : ''}`}
                         onClick={toggleTheme}
-                    ><Contrast className={`${combinedStyles.imagenDarkMode} ${isDarkMode ? combinedStyles.darkMode : ''}`}></Contrast></button>
-                    <button className={`${combinedStyles.botonLupaMenos} ${isDarkMode ? combinedStyles.darkMode : ''}`}><ZoomOut className={`${combinedStyles.imagenLupaMenos} ${isDarkMode ? combinedStyles.darkMode : ''}`}></ZoomOut></button>
+                    ><Contrast aria-label='Circulo con la mitad pintada.' className={`${combinedStyles.imagenDarkMode} ${isDarkMode ? combinedStyles.darkMode : ''}`}></Contrast></button>
+                    <button className={`${combinedStyles.botonLupaMenos} ${isDarkMode ? combinedStyles.darkMode : ''}`}><ZoomOut aria-label='Lupa con un simbolo de - dentro' className={`${combinedStyles.imagenLupaMenos} ${isDarkMode ? combinedStyles.darkMode : ''}`}></ZoomOut></button>
                 </div>
             </div>
         </section>

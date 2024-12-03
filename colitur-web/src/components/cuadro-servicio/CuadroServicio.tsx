@@ -21,7 +21,8 @@ function CuadroServicio({imagen, titulo, descripcion, ruta}: Props)
     return(
         <section 
             className={`${combinedStyles.contenedor} ${isDarkMode ? combinedStyles.darkMode : ''}`}
-            style={{backgroundImage: `url(${imagen})`} as React.CSSProperties}>
+            style={{backgroundImage: `url(${imagen})`} as React.CSSProperties}
+            aria-label="Imagen representativa del servicio.">
             
             <span className={`${combinedStyles.titulo} ${isDarkMode ? combinedStyles.darkMode : ''}`}>{titulo}</span>
             <div className={`${combinedStyles.efecto} ${isDarkMode ? combinedStyles.darkMode : ''}`}>

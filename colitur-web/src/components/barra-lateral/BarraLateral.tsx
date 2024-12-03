@@ -32,7 +32,7 @@ const BarraLateral: React.FC<BarraLateralProps> = ({opciones}) => {
         <div className={`${combinedStyles.contenedorPrincipal} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
             <aside className={`${combinedStyles.contenedorBarraLateral} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 <nav >
-                    <img src={imagen} className={`${combinedStyles.imagen} ${isDarkMode ? combinedStyles.darkMode : ''}`}></img>
+                    <img alt='Imagen de un Paisaje de Ancash' src={imagen} className={`${combinedStyles.imagen} ${isDarkMode ? combinedStyles.darkMode : ''}`}></img>
                     <span className={`${combinedStyles.administrador} ${isDarkMode ? combinedStyles.darkMode : ''}`}>Administrador</span>
                     {opciones.map((opcion)=> (
                         <button

@@ -50,7 +50,7 @@ const datos =
             titulo: "Medios de Pago",
             descripcion: "Revisa que métodos de pago son válidos en COLITUR.",
             // añadir ruta
-            ruta: "/SevicioMediosdePago"
+            ruta: "/ServicioMediosdePago"
         }
     ];
 
