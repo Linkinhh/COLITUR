@@ -18,3 +18,4 @@ export {default as FotoLicenciado} from './foto-licenciado/FotoLicenciado';
 export {default as OpcioneesServicios} from './opcriones-servicios/OpcionesServicios';
 export {default as CuadroEventos} from './cuadro-eventos/CuadroEventos';
 export {default as CuadroLibros} from './cuadro-libros/CuadroLibros';
+export {default as BotonAccesibilidad} from './boton-accesibilidad/BotonAccesibilidad';

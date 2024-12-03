@@ -40,3 +40,9 @@
     justify-content: space-around;
     align-items: center;
 }
+
+.accesibilidad {
+    position: fixed;
+    right: 0;
+    top: 20%;
+}
