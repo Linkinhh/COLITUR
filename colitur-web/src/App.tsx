@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-route
 import './App.css';
 import {PaginaColegiatura, PaginaInicio, PaginaNormativa, IniciarSesion, Administrador, PaginaNosotros, ServicioHabilitados, ServicioEventos, ServicioBiblioteca, ServicioConvenios, ServicioMediosdePago} from './features/index';
 import { ThemeProvider } from './context/ThemeContext';
+import { FontSizeProvider } from './context/FontSizeContext';
 
 // CORREGIR ESTILOS DE NORMATIVA
 
@@ -33,24 +34,26 @@ function App() {
   // añadir rutas de servicios
   return (
     <ThemeProvider>
-      <Router>
-        <Fuentes></Fuentes>
-        <ScrollToTop></ScrollToTop>
-        <Routes>
-          <Route path="/" element={<PaginaInicio></PaginaInicio>}></Route>
-          <Route path="/Nosotros" element={<PaginaNosotros></PaginaNosotros>}></Route>
-          <Route path="/Normativa" element={<PaginaNormativa></PaginaNormativa>}></Route>
-          <Route path="/Colegiatura" element={<PaginaColegiatura></PaginaColegiatura>}></Route>
-          <Route path='/IniciarSesion' element={<IniciarSesion></IniciarSesion>}></Route>
-          <Route path='/IniciarSesion/Administrador' element={<Administrador></Administrador>}></Route>
-          <Route path='/ServicioHabilitados' element={<ServicioHabilitados></ServicioHabilitados>}></Route>
-          <Route path='/ServicioEventos' element={<ServicioEventos></ServicioEventos>}></Route>
-          <Route path='/ServicioBiblioteca' element={<ServicioBiblioteca></ServicioBiblioteca>}></Route>
-          <Route path='/ServicioConvenios' element={<ServicioConvenios></ServicioConvenios>}></Route>
-          <Route path='/ServicioMediosdePago' element={<ServicioMediosdePago></ServicioMediosdePago>}></Route>
-          <Route path="*" element={<div>Página no encontrada</div>} />
-        </Routes>
-      </Router>
+      <FontSizeProvider>
+        <Router>
+          <Fuentes></Fuentes>
+          <ScrollToTop></ScrollToTop>
+          <Routes>
+            <Route path="/" element={<PaginaInicio></PaginaInicio>}></Route>
+            <Route path="/Nosotros" element={<PaginaNosotros></PaginaNosotros>}></Route>
+            <Route path="/Normativa" element={<PaginaNormativa></PaginaNormativa>}></Route>
+            <Route path="/Colegiatura" element={<PaginaColegiatura></PaginaColegiatura>}></Route>
+            <Route path='/IniciarSesion' element={<IniciarSesion></IniciarSesion>}></Route>
+            <Route path='/IniciarSesion/Administrador' element={<Administrador></Administrador>}></Route>
+            <Route path='/ServicioHabilitados' element={<ServicioHabilitados></ServicioHabilitados>}></Route>
+            <Route path='/ServicioEventos' element={<ServicioEventos></ServicioEventos>}></Route>
+            <Route path='/ServicioBiblioteca' element={<ServicioBiblioteca></ServicioBiblioteca>}></Route>
+            <Route path='/ServicioConvenios' element={<ServicioConvenios></ServicioConvenios>}></Route>
+            <Route path='/ServicioMediosdePago' element={<ServicioMediosdePago></ServicioMediosdePago>}></Route>
+            <Route path="*" element={<div>Página no encontrada</div>} />
+          </Routes>
+        </Router>
+      </FontSizeProvider>
     </ThemeProvider>
     
   )

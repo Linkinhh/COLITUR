@@ -25,7 +25,7 @@ html, body {
 
 .listas li {
     font-family: 'Inter', sans-serif;
-    font-size: 15px;
+    font-size: var(--font-size-base);
 }
 
 .contenedorBoton {
@@ -42,5 +42,5 @@ html, body {
 }
 
 .txtBoton {
-    font-size: 15px;
+    font-size: var(--font-size-base);
 }

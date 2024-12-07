@@ -3,9 +3,11 @@ import { Contrast, PersonStanding, ZoomIn, ZoomOut } from 'lucide-react';
 import styles from './BotonAccesibilidad.module.css';
 import darkStyles from './BotonAccesibilidadDark.module.css';
 import { useTheme } from '../../context/ThemeContext';
+import { useFontSize } from '../../context/FontSizeContext';
 
 function BotonAccesibilidad() {
     const { toggleTheme, isDarkMode } = useTheme();
+    const { increaseFontSize, decreaseFontSize } = useFontSize();
     const [isFocused, setIsFocused] = useState(false);
 
     const combinedStyles = isDarkMode 
@@ -29,6 +31,7 @@ function BotonAccesibilidad() {
                 >
                     <button
                         className={`${combinedStyles.botonLupaMas} ${isDarkMode ? combinedStyles.darkMode : ''}`}
+                        onClick={increaseFontSize}
                         onFocus={() => setIsFocused(true)}
                         onBlur={() => setIsFocused(false)}
                     >
@@ -48,6 +51,7 @@ function BotonAccesibilidad() {
                     </button>
                     <button
                         className={`${combinedStyles.botonLupaMenos} ${isDarkMode ? combinedStyles.darkMode : ''}`}
+                        onClick={decreaseFontSize}
                         onFocus={() => setIsFocused(true)}
                         onBlur={() => setIsFocused(false)}
                     >

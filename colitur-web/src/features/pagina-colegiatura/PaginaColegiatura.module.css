@@ -22,7 +22,7 @@ html, body {
     margin-bottom: 27px;
     line-height: 35px;
     font-family: 'Inter', sans-serif;
-    font-size: 18px;
+    font-size: var(--font-size-base);
     text-align: left;
 }
 
@@ -33,6 +33,6 @@ html, body {
     margin-bottom: 27px;
     line-height: 35px;
     font-family: 'Inter', sans-serif;
-    font-size: 18px;
+    font-size: var(--font-size-base);
     text-align: left;
 }
