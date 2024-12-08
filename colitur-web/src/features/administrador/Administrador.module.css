@@ -37,7 +37,7 @@ html, body {
 .nombreCampo
 {
     font-family: 'Inter', sans-serif;
-    font-size: 1.2rem;
+    font-size: var(--font-size-base);
     min-width: 240px;
     width: 30%;
 }
@@ -73,7 +73,7 @@ html, body {
 .pregunta
 {
     font-family: 'Inter', sans-serif;
-    font-size: 1.5rem;
+    font-size: var(--font-size-medio);
 }
 
 .botones

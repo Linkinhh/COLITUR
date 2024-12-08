@@ -1,28 +1,45 @@
 .contenedor {
     width: 310px;
-    height: 390px;
+    /* Altura total sigue siendo fija */
+    height: auto;
 }
 
 .informacionLibro {
-    width: 310px;
-    height: 45px;
-    color: var(--white-color);
-    background-color: var(--yellow-colorDark);
+    width: 300px;
+    color: var(--lightblue-color);
+    background-color: var(--yellow-color);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
+    padding: 5px; /* Añade espacio interno para un mejor diseño */
+    /* Elimina la altura fija */
+    height: auto; /* La altura será dinámica */
 }
 
 .informacionLibro p {
-    font-size: 13px;
+    font-size: var(--font-size-mini); /* Mantén el tamaño de fuente variable */
     font-weight: 700;
     margin: 0;
     margin-left: 10px;
+    line-height: 1.2; /* Ajusta el espaciado vertical relativo */
 }
 
 .informacionLibro em {
-    font-size: 12px;
+    font-size: var(--font-size-mini);
+    margin-left: 10px;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.2; /* Consistencia con `<p>` */
+}
+
+.imagen {
+    width: 310px;
+    height: auto; /* Opcional si la imagen es dinámica */
+    max-height: 345px; /* Limita la altura si es necesario */
+}
+
+.informacionLibro em {
+    font-size: var(--font-size-mini);
     margin-left: 10px;
     font-family: 'Inter', sans-serif;
 }

@@ -10,7 +10,7 @@
 {
     font-family: 'Inter', sans-serif;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: var(--font-size-base);
     background: none;
     border: none;
     padding-left: 10px;

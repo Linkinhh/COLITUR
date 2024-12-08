@@ -18,8 +18,8 @@
 }
 
 .boton {
-    width: 80px;
-    height: 30px;
+    width: 105px;
+    height: 34px;
     border-radius: 10px;
     background-color: var(--white-color);
     padding: 0px;
@@ -34,6 +34,6 @@
 }
 
 .txtBoton {
-    font-size: 15px;
+    font-size: var(--font-size-base);
     color: var(--lightblue-color);
 }

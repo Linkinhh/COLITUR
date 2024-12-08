@@ -12,13 +12,14 @@
 }
 
 .description {
-    text-align: left;
-    font-size: 20px;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     color: white;
     margin-top: 30px;
     margin-bottom: 50px;
+    width: 92%;
+    text-align: justify;
+    font-size: var(--font-size-base);
 }
 
 .fotoMediosPago {

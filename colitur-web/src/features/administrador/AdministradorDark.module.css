@@ -42,7 +42,7 @@ PCA
 .nombreCampo
 {
     font-family: 'Inter', sans-serif;
-    font-size: 1.2rem;
+    font-size: var(--font-size-base);
     width: 30%;
     min-width: 240px;
     color: white;
@@ -79,7 +79,7 @@ PCA
 .pregunta
 {
     font-family: 'Inter', sans-serif;
-    font-size: 1.5rem;
+    font-size: var(--font-size-medio);
     color: white;
 }
 

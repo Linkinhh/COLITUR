@@ -15,7 +15,7 @@
     width: 80%;
     margin-bottom: 3rem;
     font-family: 'Inter', sans-serif;
-    font-size: 1.2em;
+    font-size: var(--font-size-base);
     padding: 0.5rem;
     border-radius: 4px;
     border: solid black 1px;
@@ -32,17 +32,18 @@
     background-color: #B4C5E2;
     color: black;
     font-family: 'Inter', sans-serif;
-    font-size: 1.2em;
+    font-size: var(--font-size-base);
   }
   
   .tablaColumna {
-    padding: 0.75rem;
+    padding: 0.5rem; /* Reduce el espacio interno */
     border: 2px solid var(--lightblue-color);
     cursor: pointer;
     text-align: center;
     font-weight: normal;
-    text-align: right;
-    width: 20%;
+    white-space: nowrap; /* Evita el quiebre de línea */
+    overflow: hidden; /* Maneja contenido que se desborda */
+    text-overflow: ellipsis; /* Muestra "..." si el texto excede el ancho */
   }
   
   /* Clase para el contenedor del encabezado */
@@ -68,7 +69,7 @@
   color: black;
   font-weight: normal;
   font-family: 'Inter', sans-serif;
-  font-size: 1.2em;
+  font-size: var(--font-size-base);
   border: solid 2px var(--lightblue-color);
 }
 
@@ -112,7 +113,7 @@
   align-items: center;
   border: none;
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: var(--font-size-base);
   color: white;
 }
 
@@ -131,6 +132,6 @@
 
 .textoPagina
 {
-  font-size: 1.2em;
+  font-size: var(--font-size-base);
   font-family: 'Inter',sans-serif;
 }

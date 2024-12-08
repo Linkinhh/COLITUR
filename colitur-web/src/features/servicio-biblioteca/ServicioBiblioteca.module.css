@@ -18,14 +18,14 @@ html, body {
     width: 92%;
     text-align: justify;
     font-family: 'Inter', sans-serif;
-    font-size: 18px;
+    font-size: var(--font-size-base);
 }
 
 
 
 .buscador p {
     font-family: 'Inter', sans-serif;
-    font-size: 18px;
+    font-size: var(--font-size-base);
 }
 
 .buscador {
@@ -61,5 +61,5 @@ html, body {
 }
 
 .txtBoton {
-    font-size: 18px;
+    font-size: var(--font-size-base);
 }

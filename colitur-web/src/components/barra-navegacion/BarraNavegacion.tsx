@@ -162,7 +162,7 @@ aria-label={menuAbierto ? "Cerrar menú" : "Abrir menú"}>
                     <BotonNavegacion>Normativa</BotonNavegacion>
                 </Link>
                 <Link to="/IniciarSesion" style={{textDecoration: 'none'}} tabIndex={-1}>
-                    <BotonEstandarImagen nombre='Iniciar Sesion' conSombra = {true} children={<CircleUserRound size={48} strokeWidth={0.5}/>}></BotonEstandarImagen>
+                    <BotonEstandarImagen nombre='Iniciar Sesión' conSombra = {true} children={<CircleUserRound size={35} strokeWidth={0.5}/>}></BotonEstandarImagen>
                 </Link>
             </div>
             <div className={styles.fondoBarra}>

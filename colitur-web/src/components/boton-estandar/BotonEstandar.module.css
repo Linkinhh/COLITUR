@@ -9,6 +9,7 @@
     justify-content: center;
     align-items: center;
     border: none;
+    height: 50px;
 }
 
 .boton:hover
@@ -21,5 +22,5 @@
 {
     color: white;
     font-weight: bold;
-    font-size: 26px;
+    font-size: var(--font-size-medio);
 }

@@ -16,7 +16,8 @@
   --grey-colorDark: #18191A;
   --yellow-color-letterDark: #FBECA8;
 
-  --font-size-base: 18px;
-  --font-size-medio: 22px;
-  --font-size-title: 26px;
+  --font-size-mini: 13px;
+  --font-size-base: 16px;
+  --font-size-medio: 20px;
+  --font-size-title: 24px;
 }

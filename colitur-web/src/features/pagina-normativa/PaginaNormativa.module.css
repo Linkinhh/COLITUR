@@ -32,14 +32,14 @@ html, body {
 
 .contenedor h1 {
     color: var(--lightblue-color);
-    font-size: 32px;
+    font-size: var(--font-size-title);
     font-family: 'Inter', sans-serif;
     margin-top: 0px;
     margin-bottom: 0px;
 }
 
 .contenedor li{
-    font-size: 18px;
+    font-size: var(--font-size-base);
     font-family: 'Inter', sans-serif;
     text-align: justify;
     margin-bottom: 10px;
