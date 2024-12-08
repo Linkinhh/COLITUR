@@ -7,29 +7,37 @@
     border: none;
 }
 
-.contenedorImagen{
+.contenedorImagen {
     width: 28.5rem;
     height: 28.5rem;
     position: relative;
     overflow: hidden;
-    background-size: cover;
-    background-position: center;
 
     transition: opacity 0.5s ease;
-
-    &::before{
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-    }
 }
 
-.contenedorFecha
-{
+.imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Emula background-size: cover */
+    object-position: center; /* Emula background-position: center */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0; /* Asegura que la imagen esté en el fondo */
+}
+
+.contenedorImagen::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.contenedorFecha {
     transition: opacity 0.5s ease;
     opacity: 0;
 
@@ -44,37 +52,38 @@
     background-color: var(--yellow-colorDark);
     display: flex;
     align-items: center;
+
+    position: relative; /* Asegura que esté encima de la imagen */
+    z-index: 2; /* Fecha visible encima de la imagen */
 }
 
-.separador
-{
+.separador {
     border: none;
     width: 100%;
     height: 25px;
     background-color: var(--bone-colorDark);
 }
 
-.contenedorImagen:hover .contenedorFecha
-{
+.contenedorImagen:hover .contenedorFecha {
     opacity: 1;
 }
 
-.contenedorImagen:hover
-{
+.contenedorImagen:hover {
     cursor: pointer;
 }
 
-.contenedor:focus
-{
+.contenedor:focus,
+.contenedorImagen:focus,
+.contenedorFecha:focus {
     outline: 2px solid #0078d4; /* Resalta con un borde visible */
     outline-offset: 2px;
 }
 
-
-@media screen and (max-width: 480px){
-    .contenedorImagen
-    {
+@media screen and (max-width: 480px) {
+    .contenedorImagen {
         width: 20rem;
         height: 20rem;
     }
 }
+
+

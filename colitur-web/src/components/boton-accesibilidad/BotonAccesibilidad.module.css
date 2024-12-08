@@ -70,8 +70,11 @@
 }
 
 .imagenLupaMas,
-.imagenDarkMode,
 .imagenLupaMenos {
+    color: var(--lightblue-color);
+}
+
+.imagenDarkMode{
     color: var(--white-color);
 }
 

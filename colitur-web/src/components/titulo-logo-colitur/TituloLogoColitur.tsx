@@ -12,6 +12,8 @@ function TituloLogoColitur({titulo, imagen}: Props)
     return(
         <section aria-label="Imagen Representativa de la Pagina que se Visualiza" style={{"--imagen-fondo": `url(${imagen})`} as React.CSSProperties} className={styles.contenedor}>
             <LogoColitur></LogoColitur>
+            <span className={styles.colitur}>COLEGIO DE LICENCIADOS</span>
+            <span className={styles.colitur}>EN TURISMO DE ÁNCASH</span>
             <span className={styles.titulo}>{titulo}</span>
         </section>
     );

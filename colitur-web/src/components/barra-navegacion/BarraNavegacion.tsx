@@ -44,10 +44,15 @@ function BarraNavegacion()
 {
     const [mostrarOpciones, setMostrarOpciones] = useState(false);
     const [menuAbierto, setMenuAbierto] = useState(false);
+    const [serviciosAbierto, setServiciosAbierto] = useState(false);
 
     const toggleMenu = () =>{
         setMenuAbierto(!menuAbierto);
     }
+
+    const toggleServicios = () => {
+        setServiciosAbierto(!serviciosAbierto);
+    };
 
 /*
 <button 
@@ -87,25 +92,25 @@ aria-label={menuAbierto ? "Cerrar menú" : "Abrir menú"}>
                     <BotonNavegacion>Nosotros</BotonNavegacion>
                     </Link>
 
-                    <div 
-                        className={`${combinedStyles.contendorServicios} ${isDarkMode ? combinedStyles.darkMode : ''}`} 
-                        onMouseEnter={() => setMostrarOpciones(true)} 
-                        onMouseLeave={() => setMostrarOpciones(false)}
-                    >
-                        <BotonNavegacion>Servicios</BotonNavegacion>
-                        {mostrarOpciones && (
-                            <div className={`${combinedStyles.servicioDesplegable} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
-                                {servicios.map((data, index) => (
-                                    <OpcioneesServicios
-                                        key={index}
-                                        imagen={data.imagen}
-                                        servicio={data.servicio}
-                                        ruta={data.ruta}
-                                    ></OpcioneesServicios>
-                                ))}
-                            </div>
-                        )}
+                    <div className={`${combinedStyles.contenedorServicios} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
+                        <button
+                            className={`${combinedStyles.botonServicios} ${isDarkMode ? combinedStyles.darkMode : ''}`}
+                            onClick={toggleServicios}
+                            aria-label="Abrir servicios">
+                            <BotonNavegacion>Servicios</BotonNavegacion>
+                        </button>
+                        <div className={`${combinedStyles.serviciosDesplegable} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
+                            {servicios.map((data, index) => (
+                                <OpcioneesServicios
+                                    key={index}
+                                    imagen={data.imagen}
+                                    servicio={data.servicio}
+                                    ruta={data.ruta}
+                                ></OpcioneesServicios>
+                            ))}
+                        </div>
                     </div>
+
 
                     <Link to="/Colegiatura" style={{textDecoration: 'none'}}>
                         <BotonNavegacion>Colegiatura</BotonNavegacion>
@@ -129,25 +134,26 @@ aria-label={menuAbierto ? "Cerrar menú" : "Abrir menú"}>
                 <BotonNavegacion>Nosotros</BotonNavegacion>
                 </Link>
 
-                <div 
-                    className={`${combinedStyles.contendorServicios} ${isDarkMode ? combinedStyles.darkMode : ''}`} 
-                    onMouseEnter={() => setMostrarOpciones(true)} 
-                    onMouseLeave={() => setMostrarOpciones(false)}
-                >
-                    <BotonNavegacion>Servicios</BotonNavegacion>
-                    {mostrarOpciones && (
-                        <div className={`${combinedStyles.servicioDesplegable} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
-                            {servicios.map((data, index) => (
-                                <OpcioneesServicios
-                                    key={index}
-                                    imagen={data.imagen}
-                                    servicio={data.servicio}
-                                    ruta={data.ruta}
-                                ></OpcioneesServicios>
-                            ))}
-                        </div>
-                    )}
+                <div className={`${combinedStyles.contenedorServicios} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
+                    <button
+                        className={`${combinedStyles.botonServicios} ${isDarkMode ? combinedStyles.darkMode : ''}`}
+                        onClick={toggleServicios}
+                        aria-label="Abrir servicios">
+                        <BotonNavegacion>Servicios</BotonNavegacion>
+                    </button>
+                    <div className={`${combinedStyles.serviciosDesplegable} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
+                        {servicios.map((data, index) => (
+                            <OpcioneesServicios
+                                key={index}
+                                imagen={data.imagen}
+                                servicio={data.servicio}
+                                ruta={data.ruta}
+                            ></OpcioneesServicios>
+                        ))}
+                    </div>
                 </div>
+
+
 
                 <Link to="/Colegiatura" style={{textDecoration: 'none'}}>
                     <BotonNavegacion>Colegiatura</BotonNavegacion>

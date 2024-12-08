@@ -5,9 +5,10 @@ import darkStyles from './CuadroNoticiaDark.module.css';
 interface Props {
     imagen: string;
     fecha: string;
+    textoAlt: string;
 }
 
-function CuadroNoticia({ imagen, fecha }: Props) {
+function CuadroNoticia({ imagen, fecha, textoAlt }: Props) {
     const { isDarkMode } = useTheme();
     const combinedStyles = isDarkMode 
         ? { ...styles, ...darkStyles } 
@@ -17,18 +18,24 @@ function CuadroNoticia({ imagen, fecha }: Props) {
         <section 
             className={`${combinedStyles.contenedor} ${isDarkMode ? combinedStyles.darkMode : ''}`} 
             tabIndex={0} 
-            aria-label={`Noticia del ${fecha}`}
         >
             <div 
-                className={`${combinedStyles.contenedorImagen} ${isDarkMode ? combinedStyles.darkMode : ''}`} 
-                style={{ backgroundImage: `url(${imagen})` }} aria-label={`Imagen de la noticia del ${fecha}`}
+                className={`${combinedStyles.contenedorImagen} ${isDarkMode ? combinedStyles.darkMode : ''}`}
             >
+                {/* Imagen posicionada en el fondo */}
+                <img 
+                    src={imagen} 
+                    alt={textoAlt}
+                    className={combinedStyles.imagen} 
+                />
+                {/* Fecha visible encima de la imagen */}
                 <div 
-                    className={`${combinedStyles.contenedorFecha} ${isDarkMode ? combinedStyles.darkMode : ''}`}aria-label={`Fecha de la noticia: ${fecha}`}
+                    className={`${combinedStyles.contenedorFecha} ${isDarkMode ? combinedStyles.darkMode : ''}`}
                 >
                     {fecha}
                 </div>
             </div>
+            {/* Separador visible */}
             <div 
                 className={`${combinedStyles.separador} ${isDarkMode ? combinedStyles.darkMode : ''}`}  
                 aria-hidden="true"
@@ -38,3 +45,5 @@ function CuadroNoticia({ imagen, fecha }: Props) {
 }
 
 export default CuadroNoticia;
+
+

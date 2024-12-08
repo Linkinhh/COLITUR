@@ -9,16 +9,19 @@ const eventos =
     {
         imagen: noticia1,
         ruta:"/",
+        altEvento: "Tips para realizar investigaciones bibliométricas en turismo"
     },
 
     {
         imagen: noticia2,
         ruta:"/",
+        altEvento: "Ceremonia de Colegiatura 2024-II"
     },
 
     {
         imagen: noticia3,
         ruta:"/",
+        altEvento: "Pronunciamiento de la Junta de Decanos de los Colegios"
     },
 ]
 
@@ -34,6 +37,7 @@ function ServicioEventos () {
                                 key={index}
                                 imagen={data.imagen}
                                 ruta={data.ruta}
+                                altEvento={data.altEvento}
                             ></CuadroEventos>
                         )}
                     </div>

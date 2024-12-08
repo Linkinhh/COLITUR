@@ -27,7 +27,7 @@
 
 .titulo{
     position: absolute;
-    font-size: 28px;
+    font-size: var(--font-size-title);
     color: var(--white-color);
     font-weight: bold;
     font-family: 'Inter', sans-serif;

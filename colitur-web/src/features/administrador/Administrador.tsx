@@ -94,7 +94,7 @@ function FormularioDatosPersonales ()
     return(
         
         <div className={styles.contenedorPrincipalFormulario}>
-            <img className={styles.imagen} src={imagen}></img>
+            <img className={styles.imagen} src={imagen} alt="Imagen de un Licenciado"></img>
             <BotonEstandarImagen nombre="Cargar Imagen" conSombra={false} children={<Upload size={24} color="#FFFFFF" />}></BotonEstandarImagen>
             <div className={styles.contenedorFormulario}>
                 {formularioDatosPersonales.map((data, index)=>(
@@ -188,7 +188,7 @@ function FormularioRegistrarColegiado ()
     return(
         
         <div className={styles.contenedorPrincipalFormulario}>
-            <img className={styles.imagen} src={imagen}></img>
+            <img className={styles.imagen} src={imagen} alt="Imagen de un Licenciado"></img>
             <BotonEstandarImagen nombre="Cargar Imagen" conSombra={false} children={<Upload size={24} color="#FFFFFF" />}></BotonEstandarImagen>
             <div className={styles.contenedorFormulario}>
                 {formularioRegistrarColegiado.map((data, index)=>(
@@ -292,7 +292,7 @@ function FormularioSubirPublicaciones ()
     return(
         
         <div className={styles.contenedorPrincipalFormulario}>
-            <BookImage className={`${combinedStyles.iconoLibro} ${isDarkMode ? combinedStyles.darkMode : ''}`}></BookImage>
+            <BookImage className={`${combinedStyles.iconoLibro} ${isDarkMode ? combinedStyles.darkMode : ''}`} aria-label="Icono de una Publicacion"></BookImage>
             <BotonEstandarImagen nombre="Cargar Imagen" conSombra={false} children={<Upload size={24} color="#FFFFFF" />}></BotonEstandarImagen>
             <div className={styles.contenedorFormulario}>
                 {formularioSubirPublicaciones.map((data, index)=>(
@@ -378,7 +378,7 @@ function FormularioRegistrarLibro()
     return(
         
         <div className={styles.contenedorPrincipalFormulario}>
-            <img src={pdf}></img>
+            <img src={pdf} alt="Logo de un archivo PDF"></img>
             <BotonEstandarImagen nombre="Cargar PDF" conSombra={false} children={<Upload size={24} color="#FFFFFF" />}></BotonEstandarImagen>
             <div className={styles.contenedorFormulario}>
                 {formularioRegistrarLibro.map((data, index)=>(
@@ -476,7 +476,7 @@ function FormularioActualizarLibro()
                 ></InputTexto>
                 <Search cursor={"pointer"} size={40}/>
             </div>
-            <img src={pdf}></img>
+            <img src={pdf} alt="Logo de un archivo PDF"></img>
             <BotonEstandarImagen nombre="Cargar PDF" conSombra={false} children={<Upload size={24} color="#FFFFFF" />}></BotonEstandarImagen>
             <div className={styles.contenedorFormulario}>
                 {formularioActualizarLibro.map((data, index)=>(

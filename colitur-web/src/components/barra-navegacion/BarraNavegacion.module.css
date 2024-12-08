@@ -110,3 +110,46 @@
         width: 100%;
     }
 }
+
+.contenedorServicios {
+    position: relative; /* Mantén el contexto de posicionamiento */
+}
+
+.botonServicios {
+    background: none;
+    border: 2px solid transparent; /* Sin borde por defecto */
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    transition: border-color 0.3s ease, background-color 0.3s ease; /* Animación suave */
+}
+
+.serviciosDesplegable {
+    position: absolute;
+    top: 60px; /* Ajusta según la altura de la barra */
+    left: 20px; /* Ajusta la posición horizontal */
+    z-index: 1000;
+    display: none; /* Oculto por defecto */
+    padding: 10px;
+    overflow: hidden; /* Evita que se desborde el contenido */
+}
+
+.serviciosDesplegable > * {
+    margin-bottom: 10px;
+}
+
+/* Aparece el menú desplegable al hacer hover sobre el contenedor o el botón */
+.contenedorServicios:hover .serviciosDesplegable,
+.contenedorServicios:focus-within .serviciosDesplegable {
+    display: block;
+}
+
+/* Efectos de hover en el botón */
+.botonServicios:focus {
+    outline: none; /* Elimina el contorno predeterminado del navegador */
+    border-color: #007BFF; /* Color azul para el resaltado */
+}
+

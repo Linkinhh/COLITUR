@@ -5,9 +5,7 @@ function LogoColitur()
 {
     return(
         <section className={styles.contenedor}>
-            <img alt='Logo del Colegio de Licenciados en Turismo de Ancash y Fondo de un paisaje de Ancash' src={imagen} className={styles.imagen}></img>
-            <span className={styles.colitur}>Colegio de Licenciados</span>
-            <span className={styles.colitur}>en Turismo de Áncash</span>
+            <img alt='Logo del Colegio de Licenciados en Turismo de Ancash y Fondo de un paisaje de Ancash' src={imagen} className={styles.imagen}></img>            
         </section>
     )
 }

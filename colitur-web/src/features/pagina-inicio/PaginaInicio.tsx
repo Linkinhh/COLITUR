@@ -57,41 +57,49 @@ const datosNoticias =
     [
         {
             imagen: noticia1,
-            fecha: "16 Sep."
+            fecha: "16 Sep.",
+            alternativo: "Tips para realizar investigaciones bibliométricas en turismo"
         },
         {
             imagen: noticia2,
-            fecha: "26 Oct."
+            fecha: "26 Oct.",
+            alternativo: "Ceremonia de Colegiatura 2024-II"
         },
         {
             imagen: noticia3,
-            fecha: "29 Ago."
+            fecha: "29 Ago.",
+            alternativo: "Pronunciamiento de la Junta de Decanos de los Colegios"
         }
     ]
 
 const convenios =
     [
         {
-            imagen: convenio1
+            imagen: convenio1,
+            altConvenio: "SENARP Perú - Ministerio del Ambiente"
         },
         {
-            imagen: convenio2
+            imagen: convenio2,
+            altConvenio: "Logo Prom Perú"
         },
         {
-            imagen: convenio3
+            imagen: convenio3,
+            altConvenio: "Ministerio de Comercio Exterior y Turismo"
         },
         {
-            imagen: convenio4
+            imagen: convenio4,
+            altConvenio: "Dirección Regional de Comercio Exterior y Turismo de Ancash"
         }
     ]
 
 interface Props {
     imagen: string
+    altConvenio: string
 }
 
-function ImagenConvenio({ imagen }: Props) {
+function ImagenConvenio({ imagen, altConvenio }: Props) {
     return (
-        <img src={imagen}></img>
+        <img src={imagen} alt={altConvenio}></img>
     )
 }
 // Son 54px de espacio horizontal entre cosa y cosa
@@ -125,6 +133,7 @@ function PaginaInicio() {
                                     key={index}
                                     imagen={data.imagen}
                                     fecha={data.fecha}
+                                    textoAlt={data.alternativo}
                                 ></CuadroNoticia>
                             ))}
                         </div>
@@ -136,6 +145,7 @@ function PaginaInicio() {
                                 <ImagenConvenio
                                     key={index}
                                     imagen={data.imagen}
+                                    altConvenio={data.altConvenio}
                                 ></ImagenConvenio>
                             ))}
                         </div>

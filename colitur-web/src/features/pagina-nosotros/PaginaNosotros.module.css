@@ -19,7 +19,7 @@ html, body {
     width: 92%;
     text-align: justify;
     font-family: Inter;
-    font-size: 18px;
+    font-size: var(--font-size-base);
     margin: 20px;
 }
 

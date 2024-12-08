@@ -6,9 +6,10 @@ import { useTheme } from "../../context/ThemeContext";
 interface Props{
     imagen: string
     ruta?: string
+    altEvento: string
 }
 
-function CuadroEventos ({imagen, ruta}: Props) {
+function CuadroEventos ({imagen, ruta, altEvento}: Props) {
 
     const {isDarkMode} = useTheme();
     const combinedStyles = isDarkMode 
@@ -17,7 +18,7 @@ function CuadroEventos ({imagen, ruta}: Props) {
 
     return (
         <div className={`${combinedStyles.contenedor} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
-            <img src={imagen} className={`${combinedStyles.imagen} ${isDarkMode ? combinedStyles.darkMode : ''}`} alt="Imagen de una Noticia" />
+            <img src={imagen} className={`${combinedStyles.imagen} ${isDarkMode ? combinedStyles.darkMode : ''}`} alt={altEvento} />
             <a href={ruta} style={{textDecoration: 'none'}}>
                 <BotonEstandar titulo="Ver más" estiloBoton={`${combinedStyles.boton} ${isDarkMode ? combinedStyles.darkMode : ''}`} estiloTexto={`${combinedStyles.txtBoton} ${isDarkMode ? combinedStyles.darkMode : ''}`}></BotonEstandar>
             </a>

@@ -63,14 +63,14 @@
 .txtBoton {
     text-align: justify;
     font-family: 'Inter', sans-serif;
-    font-size: 20px;
+    font-size: var(--font-size-base);
     font-style: normal;
     font-weight: 700;
 }
 
 .nombre {
     font-family: 'Inter', sans-serif;
-    font-size: 18px;
+    font-size: var(--font-size-base);
     font-style: normal;
     font-weight: 700;
     color: white;
@@ -78,7 +78,7 @@
 
 .texto {
     font-family:'Instrument Sans', sans-serif;
-    font-size: 16px;
+    font-size: var(--font-size-base);
     font-style: normal;
     font-weight: 500;
     color: white;

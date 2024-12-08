@@ -12,7 +12,7 @@
 
 .titulo{
     font-family: 'Inter', sans-serif;
-    font-size: 28px;
+    font-size: var(--font-size-title);
     font-weight: bold;
     color: var(--white-color);
 }

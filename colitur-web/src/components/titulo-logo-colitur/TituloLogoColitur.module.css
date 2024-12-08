@@ -36,6 +36,15 @@
     font-family: 'Inter', sans-serif;
     font-weight: bold;
     padding-top: 30px;
-    font-size: 1.5rem;
+    font-size: var(--font-size-title);
     text-align: center;
+}
+
+.colitur
+{
+    color: var(--white-color);
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    padding-top: 20px;
+    font-size: var(--font-size-title);
 }

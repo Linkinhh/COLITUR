@@ -28,18 +28,18 @@ html, body {
 
 .buscador p{
     font-family: 'Inter', sans-serif;
-    font-size: 20px;
+    font-size: var(--font-size-base);
     font-weight: 700;
 }
 
 .boton{
-    width: 10%;
-    height: 50px;
+    width: 13%;
+    height: 47px;
     margin: 20px;
 }
 
 .textoBoton{
-    font-size: 18px;
+    font-size: var(--font-size-base);
 }
 
 .contenedorLicenciados {

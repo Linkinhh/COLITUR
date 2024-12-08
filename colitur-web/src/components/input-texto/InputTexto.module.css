@@ -16,7 +16,7 @@
 .campoTexto
 {
     font-family: 'Inter', sans-serif;
-    font-size: 1.2em;
+    font-size: var(--font-size-base);
     padding-top: 1.5%;
     padding-bottom: 1.5%;
     padding-left: 2.5%;
@@ -62,7 +62,7 @@
     white-space: wrap;
     display: none;
     margin-top: 5px;
-    font-size: 18px;
+    font-size: var(--font-size-base);
     z-index: 1;
 }
 

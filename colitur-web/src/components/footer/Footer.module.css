@@ -39,7 +39,7 @@
     display: flex;
     align-items: center;
     margin: 10px;
-    font-size: 18px;
+    font-size: var(--font-size-base);
 }
 
 .segundaParte
@@ -54,12 +54,17 @@
     text-decoration: underline;
 }
 
+.subrayado:hover
+{
+    color: var(--grey-color);
+}
+
 .titulo
 {
     color: var(--white-color);
     font-family: 'Inter',sans-serif;
     font-weight: bold;
-    font-size: 24px;
+    font-size: var(--font-size-medio);
     text-decoration: none;
     padding-left: 10px;
 }
@@ -94,6 +99,49 @@
     {
         flex-wrap: wrap;
     }
+}
+
+/* Estilo predeterminado para el enlace */
+.iconoTexto a {
+    text-decoration: none; /* Sin subrayado */
+    color: white; /* Texto blanco por defecto */
+    transition: color 0.3s ease; /* Animación suave al cambiar de color */
+}
+
+/* Estilo al pasar el mouse por encima */
+.iconoTexto a:hover {
+    color: var(--grey-color); /* Se queda azul mientras el mouse está encima */
+}
+
+/* Estilo para el texto del span dentro del enlace */
+.iconoTexto a span {
+    color: inherit; /* Hereda el color del enlace */
+    transition: color 0.3s ease; /* Asegura que el span también cambie de color */
+}
+
+.terceraParte a img {
+    transition: transform 0.3s ease, filter 0.3s ease; /* Suaviza la animación de escala y color */
+    transform: scale(1); /* Tamaño normal por defecto */
+    filter: brightness(100%); /* Color blanco por defecto */
+}
+
+.terceraParte a img:hover {
+    transform: scale(0.9); /* Se achica al 90% del tamaño original */
+    filter: brightness(70%); /* Cambia de blanco a un gris más oscuro */
+}
+
+.colitur
+{
+    color: var(--white-color);
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    padding-top: 20px;
+    font-size: var(--font-size-base);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    border: none;
 }
 
 /*
