@@ -42,7 +42,7 @@ const servicios = [
 
 function BarraNavegacion()
 {
-    const [mostrarOpciones, setMostrarOpciones] = useState(false);
+    //const [mostrarOpciones, setMostrarOpciones] = useState(false);
     const [menuAbierto, setMenuAbierto] = useState(false);
     const [serviciosAbierto, setServiciosAbierto] = useState(false);
 

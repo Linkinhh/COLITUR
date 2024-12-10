@@ -135,3 +135,56 @@
   font-size: var(--font-size-base);
   font-family: 'Inter',sans-serif;
 }
+
+/* Estilos responsivos */
+@media screen and (max-width: 720px) {
+  .tablaContenedor {
+      width: 95%;
+      padding: 1rem;
+  }
+
+  .filtroInput {
+      width: 80%;
+      font-size: 14px;
+      margin-bottom: 2rem;
+  }
+
+  .tablaPrincipal {
+      width: 100%;
+      font-size: 12px;
+  }
+
+  .tablaEncabezado {
+      font-size: 14px;
+  }
+
+  .tablaColumna {
+      font-size: 12px;
+      padding: 0px;
+  }
+
+  .textoFila {
+      font-size: 12px;
+      padding: 10px 0px;
+  }
+
+  .controlesPaginacion {
+      flex-direction: row;
+      gap: 0.5rem;
+  }
+
+  .botonAnterior, .botonSiguiente {
+      font-size: 12px;
+      padding: 10px;
+  }
+
+  .textoPagina {
+      font-size: 12px;
+  }
+  
+  .encabezadoConIcono
+  {
+    text-wrap: wrap;
+    min-width: 50px; /* Ajusta este valor al tamaño deseado */
+  }
+}
