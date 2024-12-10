@@ -3,7 +3,6 @@ import { BarraLateral, BarraNavegacion, FondoPaginas, Footer, TabWidget, InputTe
 //import Tab from "../../components/tab-widget/TabWidget";
 import {CircleUser, LockKeyhole, UserPlus, CreditCard, Newspaper, BookText, LogOut, Upload, BookPlus, BookCheck, BookX, Search, BookImage} from "lucide-react";
 import imagen from "../../assets/datos_personales_administrador.png";
-import imagen2 from "../../assets/subir_publicaciones_administrador.jpg";
 import pdf from "../../assets/PDF.png";
 import { Link } from "react-router-dom";
 import darkStyles from './AdministradorDark.module.css';
@@ -474,7 +473,7 @@ function FormularioActualizarLibro()
                 <InputTexto
                 placeHolder="Buscar libro"
                 ></InputTexto>
-                <Search cursor={"pointer"} size={40}/>
+                <Search className={styles.borrar} cursor={"pointer"} size={40}/> 
             </div>
             <img src={pdf} alt="Logo de un archivo PDF"></img>
             <BotonEstandarImagen nombre="Cargar PDF" conSombra={false} children={<Upload size={24} color="#FFFFFF" />}></BotonEstandarImagen>

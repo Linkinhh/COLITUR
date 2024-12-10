@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Contrast, PersonStanding, ZoomIn, ZoomOut } from 'lucide-react';
 import styles from './BotonAccesibilidad.module.css';
 import darkStyles from './BotonAccesibilidadDark.module.css';

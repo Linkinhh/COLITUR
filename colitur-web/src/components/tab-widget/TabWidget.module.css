@@ -4,6 +4,8 @@
 {
     width: 100%;
     background-color: var(--white-color);
+    margin: 0px;
+    padding: 0px;
 }
 
 .titulo
@@ -57,4 +59,47 @@
     color: #000000;
     font-weight: bold; 
     border-bottom-color: var(--lightblue-color);
+}
+
+@media screen and (max-width: 1024px){
+    
+    .contenedorTitulo
+    {
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .titulo
+    {
+        font-size: var(--font-size-base);
+        padding-left: 5px;
+    }
+    .contenedorPestana,
+    .contenedorPestanaActiva {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /*Puede ir como que no también*/
+        /*flex-wrap: wrap; */
+        padding: 4px 2px; /* Combina paddings en una sola línea */
+    }
+
+    .contenedorPestana {
+        background: none;
+        color: var(--grey-color);
+        font-weight: bold; /* Destaca texto */
+        border-bottom-color: var(--grey-color); /* Borde azul para la pestaña activa */
+    }
+
+    .contenedorPestana:hover {
+        cursor: pointer;
+        border-bottom-color: var(--lightblue-color);
+    }
+
+    .contenedorPestanaActiva {
+        background-color: var(--white-color);
+        color: #000000;
+        font-weight: bold; 
+        border-bottom-color: var(--lightblue-color);
+    }
 }

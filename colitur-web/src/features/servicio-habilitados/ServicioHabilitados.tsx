@@ -1,4 +1,4 @@
-import { BarraNavegacion, BotonEstandar, ContenedorConTitulo, FondoPaginas, FotoLicenciado, InputTexto, OpcioneesServicios, TituloLogoColitur } from '../../components';
+import { BarraNavegacion, BotonEstandar, ContenedorConTitulo, FondoPaginas, FotoLicenciado, InputTexto, TituloLogoColitur } from '../../components';
 import styles from './ServicioHabilitados.module.css';
 import imagenPortada from '../../assets/ConsultarHabilitado.jpg';
 import fotoColegiado from '../../assets/datos_personales_administrador.png';
