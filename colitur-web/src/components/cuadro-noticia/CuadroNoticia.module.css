@@ -86,4 +86,11 @@
     }
 }
 
+@media screen and (max-width: 400px) {
+    .contenedorImagen {
+        width: 18rem;
+        height: 18rem;
+    }
+}
+
 
