@@ -1,6 +1,6 @@
 import styles from './IniciarSesion.module.css';
 import { BarraNavegacion, TituloLogoColitur, Footer, FondoPaginas, InputTexto, BotonEstandar } from '../../components';
-import iniciarSesion from "../../assets/Iniciar_Sesion.svg"; 
+import iniciarSesion from "../../assets/Iniciar_Sesion.svg";
 //import icono from "../../assets/Signo_Pregunta.svg";
 import { useNavigate } from 'react-router-dom';
 import darkStyles from './IniciarSesionDark.module.css';
@@ -9,12 +9,11 @@ import { useState } from 'react';
 
 
 
-function IniciarSesion()
-{
-    const {isDarkMode} = useTheme();
-    const combinedStyles = isDarkMode 
-    ? { ...styles, ...darkStyles }
-    : styles;
+function IniciarSesion() {
+    const { isDarkMode } = useTheme();
+    const combinedStyles = isDarkMode
+        ? { ...styles, ...darkStyles }
+        : styles;
 
     // Definición de la data a recibir
     const [formData, setFormData] = useState({
@@ -24,7 +23,7 @@ function IniciarSesion()
 
     // Para redirigir a otra ruta de la página
     const navigate = useNavigate();
-    
+
 
     // Almacena con ...formData lo que se ingresó antes y actualiza
     // los nuevos valores con [e.target.name]
@@ -36,18 +35,18 @@ function IniciarSesion()
     };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+
+        const urlParams = new URLSearchParams(formData); // Convierte el objeto formData en parámetros de URL
+        const url = `http://127.0.0.1:5000/login?${urlParams.toString()}`;
+
         e.preventDefault();
         try {
-            const response = await fetch('http://127.0.0.1:5000/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData)
+            const response = await fetch(url, {
+                method: 'GET',
             });
 
             const data = await response.json();
-            
+
             if (data.success) {
                 navigate('/IniciarSesion/Administrador');
             } else {
@@ -59,38 +58,38 @@ function IniciarSesion()
         }
     };
 
-    return(
+    return (
         <div className={`${combinedStyles.content} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
             <BarraNavegacion></BarraNavegacion>
             <TituloLogoColitur titulo="INICIAR SESIÓN" imagen={iniciarSesion}></TituloLogoColitur>
             <FondoPaginas>
                 <form className={styles.contenedorGeneral} onSubmit={handleSubmit}>
 
-                <div className={`${combinedStyles.contenedorCampoTexto} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
-                    <span className={`${combinedStyles.tituloCampo} ${isDarkMode ? combinedStyles.darkMode : ''}`}>Número de Colegiado o DNI</span>
-                    <InputTexto 
-                    placeHolder='Ingrese su Número de Colegiado o DNI' 
-                    tipo="text"
-                    nombre="username"
-                    autoCompletado='off'
-                    value={formData.username}
-                    onChange={handleInputChange}></InputTexto>
-                </div>
-                <div className={`${combinedStyles.contenedorCampoTexto} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
-                    <span className={`${combinedStyles.tituloCampo} ${isDarkMode ? combinedStyles.darkMode : ''}`}>Contraseña</span>
-                    <InputTexto 
-                    placeHolder='Ingresa tu Contraseña' 
-                    tipo="password"
-                    nombre="password"
-                    autoCompletado="current-password"
-                    value={formData.password}
-                    onChange={handleInputChange}></InputTexto>
-                </div>
-                <div className={`${combinedStyles.contenedorBoton} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
-                    <div className={styles.contenedorBoton}>
-                        <BotonEstandar titulo="Iniciar Sesión" tipo="submit"></BotonEstandar>
+                    <div className={`${combinedStyles.contenedorCampoTexto} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
+                        <span className={`${combinedStyles.tituloCampo} ${isDarkMode ? combinedStyles.darkMode : ''}`}>Número de Colegiado o DNI</span>
+                        <InputTexto
+                            placeHolder='Ingrese su Número de Colegiado o DNI'
+                            tipo="text"
+                            nombre="username"
+                            autoCompletado='off'
+                            value={formData.username}
+                            onChange={handleInputChange}></InputTexto>
                     </div>
-                </div>
+                    <div className={`${combinedStyles.contenedorCampoTexto} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
+                        <span className={`${combinedStyles.tituloCampo} ${isDarkMode ? combinedStyles.darkMode : ''}`}>Contraseña</span>
+                        <InputTexto
+                            placeHolder='Ingresa tu Contraseña'
+                            tipo="password"
+                            nombre="password"
+                            autoCompletado="current-password"
+                            value={formData.password}
+                            onChange={handleInputChange}></InputTexto>
+                    </div>
+                    <div className={`${combinedStyles.contenedorBoton} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
+                        <div className={styles.contenedorBoton}>
+                            <BotonEstandar titulo="Iniciar Sesión" tipo="submit"></BotonEstandar>
+                        </div>
+                    </div>
                 </form>
             </FondoPaginas>
             <Footer></Footer>

@@ -4,18 +4,18 @@ import darkStyles from './BotonEstandarAlternativoDark.module.css';
 
 interface Props{
     titulo: string;
+    onClick?: () => void;
 }
 
-function BotonEstandar({titulo}: Props)
+function BotonEstandar({titulo,onClick}: Props)
 {
-
     const {isDarkMode} = useTheme();
     const combinedStyles = isDarkMode 
         ? { ...styles, ...darkStyles }
         : styles;
 
     return(
-        <button 
+        <button onClick={onClick} 
             className={`${combinedStyles.boton} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
             <span className={`${combinedStyles.spanBoton} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 {titulo}
