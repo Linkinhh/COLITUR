@@ -8,7 +8,10 @@ interface Props {
     tipo?: "text" | "password";
     nombre?: "password" | "username";
     autoCompletado?: "off" | "current-password" | "new-password" | "username";
-    mostrarAyuda?: boolean; // Nueva opción para mostrar el ícono de ayuda
+    mostrarAyuda?: boolean;
+    value?:string;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void; // Nueva opción para mostrar el ícono de ayuda
+    disabled?: boolean;
 }
 
 function InputTexto({
@@ -18,6 +21,9 @@ function InputTexto({
     nombre,
     autoCompletado = "off",
     mostrarAyuda = false,
+    value,
+    onChange,
+    disabled=false
 }: Props) {
     const [mostrarPassword, setMostrarPassword] = useState(false);
 
@@ -32,6 +38,9 @@ function InputTexto({
                 placeholder={placeHolder}
                 autoComplete={autoCompletado}
                 name={nombre}
+                value={value}
+                onChange={onChange}
+                disabled={disabled}
                 type={tipo === "password" ? (mostrarPassword ? "text" : "password") : "text"}
             />
             {tipo === "password" ? (

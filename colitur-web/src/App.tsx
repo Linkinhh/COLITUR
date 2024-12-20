@@ -30,7 +30,6 @@ function ScrollToTop() {
 
 function App() {
   //const [count, setCount] = useState(0)
-
   // añadir rutas de servicios
   return (
     <ThemeProvider>

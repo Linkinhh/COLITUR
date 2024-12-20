@@ -15,9 +15,14 @@ html, body {
     flex-direction: column;
 }
 
-.contenedorCampoTexto
+.contenedorGeneral
 {
     width: 60%;
+}
+
+.contenedorCampoTexto
+{
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;

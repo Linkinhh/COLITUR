@@ -8,6 +8,11 @@ html, body {
     box-sizing: border-box; /* Ajusta el modelo de caja */
 }
 
+.contenedorGeneral
+{
+    width: 60%;
+}
+
 .content {
     width: 100%;
     height: 100%;
@@ -17,7 +22,7 @@ html, body {
 
 .contenedorCampoTexto
 {
-    width: 60%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;

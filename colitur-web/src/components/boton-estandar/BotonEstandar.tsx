@@ -6,9 +6,11 @@ interface Props{
     titulo: string;
     estiloBoton?: string;
     estiloTexto?: string;
+    tipo?: "submit" | "reset" | "button";
+    onClick?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-function BotonEstandar({titulo, estiloBoton, estiloTexto}: Props)
+function BotonEstandar({titulo, estiloBoton, estiloTexto, tipo}: Props)
 {
     
     const {isDarkMode} = useTheme();
@@ -18,6 +20,7 @@ function BotonEstandar({titulo, estiloBoton, estiloTexto}: Props)
 
     return(
         <button 
+            type={tipo}
             className={`${combinedStyles.boton} ${estiloBoton || ""} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
             <span className={`${combinedStyles.spanBoton} ${estiloTexto || ""} ${isDarkMode ? combinedStyles.darkMode : ''}`}>
                 {titulo}

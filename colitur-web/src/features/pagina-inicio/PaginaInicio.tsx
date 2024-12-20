@@ -105,7 +105,6 @@ function ImagenConvenio({ imagen, altConvenio }: Props) {
 // Son 54px de espacio horizontal entre cosa y cosa
 
 function PaginaInicio() {
-    
     return (
         <>
             

@@ -7,16 +7,20 @@ import pdf from "../../assets/PDF.png";
 import { Link } from "react-router-dom";
 import darkStyles from './AdministradorDark.module.css';
 import { useTheme } from "../../context/ThemeContext";
-
+import { useState, useEffect } from "react";
+import { useNavigate  } from "react-router-dom";
 interface CampoTextoProps
 {
     nombre: string;
     place: string;
     detalle?: string;
-    tipo?: "text" | "password"
+    tipo?: "text" | "password";
+    valor?: string;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    disabled?: boolean; 
 }
 
-function CampoTexto({nombre, place, detalle, tipo="text"}: CampoTextoProps)
+function CampoTexto({nombre, place, detalle, tipo="text", valor, onChange, disabled = false}: CampoTextoProps)
 {
 
     const {isDarkMode} = useTheme();
@@ -27,87 +31,196 @@ function CampoTexto({nombre, place, detalle, tipo="text"}: CampoTextoProps)
     return(
         <div className={styles.contenedorNombreCampo}>
             <span className={`${combinedStyles.nombreCampo} ${isDarkMode ? combinedStyles.darkMode : ''}`}>{nombre}</span>
-            <InputTexto placeHolder={place} detalle={detalle} tipo={tipo} mostrarAyuda={true}></InputTexto>
+            <InputTexto placeHolder={place} detalle={detalle} tipo={tipo} mostrarAyuda={true} value={valor} onChange={onChange} disabled={disabled}></InputTexto>
         </div>
     );
 }
 
 const formularioDatosPersonales = [
     {
-        nombre:"Fecha de Incorporación", 
-        place:"dd/mm/yyyy", 
-        detalle:"Ingrese la fecha en la que fue expedido su certificado.",
-        tipo:"text" 
+        nombre: "Fecha de Incorporación",
+        place: "dd/mm/yyyy",
+        detalle: "Ingrese la fecha en la que fue expedido su certificado.",
+        tipo: "text",
+        fieldName: "fechaIncorporacion"  // Añadido
     },
     {
-        nombre:"N° de Colegiado", 
-        place:"",
-        detalle:"Número de colegiado que fue generado al expedir su certificado.",
-        tipo:"text"
+        nombre: "N° de Colegiado",
+        place: "",
+        detalle: "Número de colegiado que fue generado al expedir su certificado.",
+        tipo: "text",
+        fieldName: "numeroColegiado"  // Añadido
     },
     {
-        nombre:"N° de DNI",
-        place:"Ingrese su N° de DNI",
-        detalle:"Número de su Documento de Identificación Nacional.",
-        tipo:"text"
+        nombre: "N° de DNI",
+        place: "Ingrese su N° de DNI",
+        detalle: "Número de su Documento de Identificación Nacional.",
+        tipo: "text",
+        fieldName: "dni"  // Añadido
     },
     {
-        nombre:"Apellido Paterno", 
-        place:"Ingrese su apellido paterno", 
-        detalle:"Apellido heredado de su padre, registrado en su DNI.",
-        tipo:"text"
+        nombre: "Apellido Paterno",
+        place: "Ingrese su apellido paterno",
+        detalle: "Apellido heredado de su padre, registrado en su DNI.",
+        tipo: "text",
+        fieldName: "apellidoPaterno"  // Añadido
     },
     {
-        nombre:"Apellido Materno", 
-        place:"Ingrese su apellido materno", 
-        detalle:"Apellido heredado de su madre, registrado en su DNI.",
-        tipo:"text"
+        nombre: "Apellido Materno",
+        place: "Ingrese su apellido materno",
+        detalle: "Apellido heredado de su madre, registrado en su DNI.",
+        tipo: "text",
+        fieldName: "apellidoMaterno"  // Añadido
     },
     {
-        nombre:"Nombres",
-        place:"Ingrese sus nombres completos",
-        detalle:"Rellene este campo con sus nombres completos como está registrado en su DNI.",
-        tipo:"text"
+        nombre: "Nombres",
+        place: "Ingrese sus nombres completos",
+        detalle: "Rellene este campo con sus nombres completos como está registrado en su DNI.",
+        tipo: "text",
+        fieldName: "nombres"  // Añadido
     },
     {
-        nombre:"Estado de Colegiado", 
-        place:"", 
-        detalle:"Este es su estado dentro de los registros del colegio. En caso salga 'Habilitado' se entienda que ha pagado su membresía; caso contrario, saldrá 'Deshabilitado'.",
-        tipo:"text"
+        nombre: "Estado de Colegiado",
+        place: "",
+        detalle: "Este es su estado dentro de los registros del colegio. En caso salga 'Habilitado' se entienda que ha pagado su membresía; caso contrario, saldrá 'Deshabilitado'.",
+        tipo: "text",
+        fieldName: "estadoColegiado"  // Añadido
     },
     {
-        nombre:"Celular", 
-        place:"Ingrese su número celular", 
-        detalle:"Ingrese su número de celular. En caso este no sea nacional, añada el prefijo necesario.",
-        tipo:"text"
+        nombre: "Celular",
+        place: "Ingrese su número celular",
+        detalle: "Ingrese su número de celular. En caso este no sea nacional, añada el prefijo necesario.",
+        tipo: "text",
+        fieldName: "celular"  // Añadido
     },
     {
-        nombre:"Correo electrónico", 
-        place:"Ingrese su correo electrónico", 
-        detalle:"Rellene este campo con su correo electrónico personal con el que registró el formulario para solicitar la expedición de su certificado.",
-        tipo:"text"
+        nombre: "Correo electrónico",
+        place: "Ingrese su correo electrónico",
+        detalle: "Rellene este campo con su correo electrónico personal con el que registró el formulario para solicitar la expedición de su certificado.",
+        tipo: "text",
+        fieldName: "email"  // Añadido
     }
-]
+];
+
+interface UserData {
+    fechaIncorporacion: string;
+    numeroColegiado: string;
+    dni: string;
+    apellidoPaterno: string;
+    apellidoMaterno: string;
+    nombres: string;
+    estadoColegiado: string;
+    celular: string;
+    email: string;
+}
+
 function FormularioDatosPersonales ()
 {
+    const [userData, setUserData] = useState<UserData>({
+        fechaIncorporacion: '',
+        numeroColegiado: '',
+        dni: '',
+        apellidoPaterno: '',
+        apellidoMaterno: '',
+        nombres: '',
+        estadoColegiado: '',
+        celular: '',
+        email: ''
+    });
+
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
+    
+    // Cargar datos del usuario
+    useEffect(() => {
+        const fetchUserData = async () => {
+        try {
+            const response = await fetch('http://127.0.0.1:5000/user-data', {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
+            }
+            });
+            
+            if (response.ok) {
+            const data = await response.json();
+            setUserData(data);
+            } else {
+            setError('Error al cargar datos');
+            }
+        } catch (err) {
+            setError('Error de conexión');
+        } finally {
+            setLoading(false);
+        }
+        };
+
+        fetchUserData();
+    }, []);
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>, field: string) => {
+        // Verificar si el campo es editable
+        const nonEditableFields = ['numeroColegiado', 'estadoColegiado', 'fechaIncorporacion'];
+        if (nonEditableFields.includes(field)) {
+            return;
+        }
+
+        setUserData({
+        ...userData,
+        [field]: e.target.value
+        });
+    };
+
+    const handleSubmit = async () => {
+        try {
+        const response = await fetch('http://127.0.0.1:5000/update-user', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
+            },
+            body: JSON.stringify(userData)
+        });
+
+        if (response.ok) {
+            alert('Datos actualizados correctamente');
+        } else {
+            setError('Error al actualizar datos');
+        }
+        } catch (err) {
+        setError('Error de conexión');
+        }
+    };
+
+    
     return(
         
         <div className={styles.contenedorPrincipalFormulario}>
             <img className={styles.imagen} src={imagen} alt="Imagen de un Licenciado"></img>
-            <BotonEstandarImagen nombre="Cargar Imagen" conSombra={false} children={<Upload size={24} color="#FFFFFF" />}></BotonEstandarImagen>
+            <BotonEstandarImagen 
+            nombre="Cargar Imagen" 
+            conSombra={false} 
+            children={<Upload size={24} color="#FFFFFF" />}></BotonEstandarImagen>
             <div className={styles.contenedorFormulario}>
                 {formularioDatosPersonales.map((data, index)=>(
                     <CampoTexto
                         key={index}
                         nombre={data.nombre}
                         place={data.place}
-                        detalle={data.detalle} 
+                        detalle={data.detalle}
+                        valor={userData[data.fieldName as keyof UserData]} // añadir fieldName a tu array de campos
+                        onChange={(e:React.ChangeEvent<HTMLInputElement>) => handleInputChange(e, data.fieldName)}
+                        disabled={['N° de Colegiado', 'Estado de Colegiado', 'Fecha de Incorporación'].includes(data.nombre)} 
                     ></CampoTexto>
                 ))}
             </div>
             <div className={styles.botones}>
-                <BotonEstandar titulo="Actualizar"></BotonEstandar>
-                <BotonEstandarAlternativo titulo="Cancelar"></BotonEstandarAlternativo>
+                <BotonEstandar 
+                titulo="Actualizar" 
+                onClick={handleSubmit}></BotonEstandar>
+                <BotonEstandarAlternativo 
+                titulo="Cancelar"></BotonEstandarAlternativo>
             </div>
         </div>
     );
