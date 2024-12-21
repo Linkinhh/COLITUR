@@ -38,3 +38,9 @@ $ pip install -r requirements.txt
 ```
 $ flask run
 ```
+
+## Desenvolvedores
+
+- Enrique Andŕe Córdova Sáenz - 15390306
+- Miguel Ángel Córdova Oruna - 15390310
+- Esteban Manuel Mercado Cueva - 15390331
