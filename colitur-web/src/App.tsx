@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 //import { useState } from 'react';
 import './App.css';
-import {PaginaColegiatura, PaginaInicio, PaginaNormativa, IniciarSesion, Administrador, PaginaNosotros, ServicioHabilitados, ServicioEventos, ServicioBiblioteca, ServicioConvenios, ServicioMediosdePago} from './features/index';
-import { ThemeProvider } from './context/ThemeContext';
-import { FontSizeProvider } from './context/FontSizeContext';
+import {PaginaColegiatura, PaginaInicio, PaginaNormativa, IniciarSesion, Administrador, PaginaNosotros, ServicioHabilitados, ServicioEventos, ServicioBiblioteca, ServicioConvenios, ServicioMediosdePago} from './views/features/index';
+import { ThemeProvider } from './views/context/ThemeContext';
+import { FontSizeProvider } from './views/context/FontSizeContext';
 
 // CORREGIR ESTILOS DE NORMATIVA
 

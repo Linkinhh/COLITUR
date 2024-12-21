@@ -1,0 +1,40 @@
+@import "../../../App.css";
+
+.container {
+    width: 100vw;
+    margin-left: -9px;
+    margin-bottom: -9px;
+    margin-top: -9px;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.description {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 92%;
+    text-align: justify;
+    font-size: var(--font-size-base);
+}
+
+.fotoMediosPago {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 0;
+    height: 600px;
+    width: 620px;
+}
+
+.note {
+    font-size: 18px;
+    color: white;
+    text-align: left;
+    font-weight: 400;
+    margin-top: 20px;
+    font-family: 'Inter', sans-serif;
+}

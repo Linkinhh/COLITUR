@@ -1,0 +1,85 @@
+@import "../../../App.css";
+
+.contenedor{
+    width: 340px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    
+    transition: opacity 0.5s ease;
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.4);
+        z-index: 1;
+    }
+}
+
+.titulo{
+    position: absolute;
+    font-size: 28px;
+    color: var(--white-color);
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    z-index: 3;
+}
+
+.descripcion{
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    z-index: 3;
+    padding-bottom: 40px;
+}
+
+.efecto{
+    opacity: 0;
+    
+    transition: opacity 0.5s ease;
+    width: 100%;
+    height: 100%;
+    background-color: var(--yellow-colorDark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+}
+
+.boton{
+    background: none;
+    border: solid 2px var(--lightblue-colorDark);
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+}
+
+.contenedor:hover
+{
+    opacity: 1;
+}
+
+.contenedor:hover .efecto
+{
+    opacity: 1;
+}
+
+.boton:hover
+{
+    cursor: pointer;
+}
+
+.contenedor:focus-within{
+    outline: 2px solid #0078d4; /* Resalta con un borde visible */
+    outline-offset: 2px;
+}

@@ -1,0 +1,105 @@
+@import "../../../App.css";
+
+.contenedorPrincipal
+{
+    width: 100%;
+    background-color: var(--white-colorDark);
+    margin: 0px;
+    padding: 0px;
+}
+
+.titulo
+{
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: var(--font-size-base);
+    background: none;
+    border: none;
+    padding-left: 10px;
+}
+
+.contenedorTitulo
+{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.contenedorContenido
+{
+    display: flex;
+    justify-content: center;
+}
+
+
+.contenedorPestana,
+.contenedorPestanaActiva {
+    border: none;
+    display: flex;
+    justify-content: center;
+    padding: 15px 20px; /* Combina paddings en una sola línea */
+    border-bottom: 4px solid transparent; /* Se asegura de mantener la misma base */
+    transition: border-bottom-color 0.3s ease, background-color 0.3s ease; /* Transiciones suaves */
+}
+
+.contenedorPestana {
+    background: none;
+    color: var(--grey-color);
+    font-weight: bold; /* Destaca texto */
+    border-bottom-color: var(--grey-color); /* Borde azul para la pestaña activa */
+}
+
+.contenedorPestana:hover {
+    cursor: pointer;
+    border-bottom-color: var(--lightblue-color);
+}
+
+.contenedorPestanaActiva {
+    background-color: var(--white-colorDark);
+    color: white;
+    font-weight: bold; 
+    border-bottom-color: var(--lightblue-color);
+}
+
+@media screen and (max-width: 1024px){
+    
+    .contenedorTitulo
+    {
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .titulo
+    {
+        font-size: var(--font-size-base);
+        padding-left: 5px;
+    }
+    .contenedorPestana,
+    .contenedorPestanaActiva {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*Puede ir como que no también*/
+    /*flex-wrap: wrap; */
+    padding: 4px 2px; /* Combina paddings en una sola línea */
+}
+
+.contenedorPestana {
+    background: none;
+    color: var(--grey-color);
+    font-weight: bold; /* Destaca texto */
+    border-bottom-color: var(--grey-color); /* Borde azul para la pestaña activa */
+}
+
+.contenedorPestana:hover {
+    cursor: pointer;
+    border-bottom-color: var(--lightblue-color);
+}
+
+.contenedorPestanaActiva {
+    background-color: var(--white-colorDark);
+    color: white;
+    font-weight: bold; 
+    border-bottom-color: var(--lightblue-color);
+}
+}

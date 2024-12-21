@@ -1,0 +1,39 @@
+@import "../../../App.css";
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--yellow-color);
+    width: 400px;
+    height: 435px;
+    margin: 10px;
+}
+
+.imagen {
+    margin-top: 13px;
+    width: 363px;
+    height: 363px;
+}
+
+.boton {
+    width: 105px;
+    height: 34px;
+    border-radius: 10px;
+    background-color: var(--white-color);
+    padding: 0px;
+}
+
+.boton:hover {
+    background-color: var(--lightblue-color);
+}
+
+.boton:hover .txtBoton {
+    color: var(--white-color);
+}
+
+.txtBoton {
+    font-size: var(--font-size-base);
+    color: var(--lightblue-color);
+}

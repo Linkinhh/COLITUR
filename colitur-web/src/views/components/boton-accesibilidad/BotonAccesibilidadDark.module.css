@@ -1,0 +1,87 @@
+@import "../../../index.css";
+
+.content {
+    display: block;
+    position: relative;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 62px;
+    height: 119px;
+    background-color:  var(--lightblue-colorDark);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    z-index: 2;
+    position: relative;
+    transition: opacity 0.3s ease;
+}
+
+.imagenAccesibilidad {
+    width: 50px;
+    height: 50px;
+    color: var(--white-color);
+}
+
+.content:hover .contenedor {
+    opacity: 0; /* Oculta el contenedor al pasar el mouse */
+    pointer-events: none; /* Evita interferencia al ocultarse */
+}
+
+.content:hover .contenedorHover {
+    opacity: 1; /* Muestra los botones */
+    pointer-events: auto; /* Permite la interacción con los botones */
+}
+
+.contenedorHover {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: auto;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}   
+
+.botonLupaMas,
+.botonDarkMode,
+.botonLupaMenos {
+    cursor: pointer;
+    border: 0;
+    width: 62px;
+    height: 40px;
+    border-top-left-radius: 10px;
+    background-color: var(--yellow-colorDark);
+}
+
+.botonDarkMode {
+    border-top-left-radius: 0px;
+    background-color: var(--lightblue-colorDark);
+}
+
+.botonLupaMenos {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 10px;
+}
+
+.imagenLupaMas,
+.imagenDarkMode,
+.imagenLupaMenos {
+    color: var(--white-color);
+}
+
+/* Cuando el botón tiene focus, simula el hover */
+.content.focusHover .contenedor {
+    opacity: 0; /* Igual que en hover */
+    pointer-events: none;
+}
+
+.content.focusHover .contenedorHover {
+    opacity: 1; /* Igual que en hover */
+    pointer-events: auto;
+}
